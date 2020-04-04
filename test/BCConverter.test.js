@@ -17,7 +17,6 @@ const ContractRegistryClient = require('./helpers/ContractRegistryClient.js');
 
 const chai = require('chai');
 
-
 const {
   BN, 
   constants,

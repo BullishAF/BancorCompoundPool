@@ -1,6 +1,6 @@
 const BCConverter = artifacts.require("BCConverter")
 const SmartToken = artifacts.require("SmartToken")
-const ContractRegistery = artifacts.require("IContractRegistry")
+const ContractRegistry = artifacts.require("IContractRegistry")
 const IERC20Token = artifacts.require("IERC20Token")
 const IBancorConverterRegistry = artifacts.require("IBancorConverterRegistry")
 const IBancorNetwork = artifacts.require("IBancorNetwork")
@@ -9,7 +9,7 @@ const ICToken = artifacts.require("ICToken")
 module.exports = async function(deployer, network, accounts) {
 	if(network === "external") {
 
-    if( process.argv.indexOf('--bancorContractRegistery')==-1 || 
+    if( process.argv.indexOf('--bancorContractRegistry')==-1 || 
       process.argv.indexOf('--uToken')==-1 ||
       process.argv.indexOf('--cToken')==-1 ||
       process.argv.indexOf('--bntReserveBalance')==-1 ||
@@ -21,7 +21,7 @@ module.exports = async function(deployer, network, accounts) {
         throw (Error("  - A mandatory argument is missing, please check project README for moredetails."));
     }
 
-    var contractRegisteryAddress = process.argv[process.argv.indexOf('--bancorContractRegistery')+1]
+    var contractRegistryAddress = process.argv[process.argv.indexOf('--bancorContractRegistry')+1]
     var uTokenAddress = process.argv[process.argv.indexOf('--uToken')+1]
     var cTokenAddress = process.argv[process.argv.indexOf('--cToken')+1]
     var bntReserveBalance = process.argv[process.argv.indexOf('--bntReserveBalance')+1]
@@ -52,14 +52,14 @@ module.exports = async function(deployer, network, accounts) {
   	console.log("\t- Deploying SmartToken contract ...")
   	await deployer.deploy(SmartToken,smartTokenName,smartTokenSymbol,18).then(async () => {
 
-  		console.log("\t- Loading ContractRegistery ...")
-  		var contractRegistery = await ContractRegistery.at(contractRegisteryAddress)
+  		console.log("\t- Loading ContractRegistry ...")
+  		var contractRegistry = await ContractRegistry.at(contractRegistryAddress)
 
   		console.log("\t- Querying contract addresses ...")
   		promisesArray = []
-  		promisesArray.push(contractRegistery.addressOf(web3.utils.toHex("BNTToken")))
-  		promisesArray.push(contractRegistery.addressOf(web3.utils.toHex("BancorConverterRegistry")))
-  		promisesArray.push(contractRegistery.addressOf(web3.utils.toHex("BancorNetwork")))
+  		promisesArray.push(contractRegistry.addressOf(web3.utils.toHex("BNTToken")))
+  		promisesArray.push(contractRegistry.addressOf(web3.utils.toHex("BancorConverterRegistry")))
+  		promisesArray.push(contractRegistry.addressOf(web3.utils.toHex("BancorNetwork")))
   		promisesValues = await Promise.all(promisesArray)
 
   		console.log("\t- Loading necessary tokens and contracts ...")
@@ -79,7 +79,7 @@ module.exports = async function(deployer, network, accounts) {
 	  	var deployerPromise = deployer.deploy(
 	  		BCConverter, 
 	  		smartToken.address, 
-	  		contractRegisteryAddress, 
+	  		contractRegistryAddress, 
 	  		conversionFee, 
 	  		bntToken.address, 
 	  		bntReserveRatio
@@ -120,7 +120,7 @@ module.exports = async function(deployer, network, accounts) {
 
   		await Promise.all(promisesArray)
 
-  		console.log("\t- Adding converter to registery ...")
+  		console.log("\t- Adding converter to Registry ...")
   		await bancorConverterRegistry.addConverter(bcConverter.address,{gasPrice:5000000000})
   		console.log("\t- Deployment ended")
 
