@@ -2,13 +2,13 @@
 
 ## Description
 
-This project aims to implement a new Bancor pool design that interacts with compound platform automatically, when deployed the pool will hold only compound tokens internally (other tokens can be added also), however, when the compound token is added to the underlying token has to be specified also.
+This project aims to implement a new Bancor pool design that interacts with compound platform automatically, when deployed the pool will hold only compound tokens internally (other tokens can be added also), however, when the compound token is added the underlying token has to be specified.
 
 When funding the pool (converter), liquidity providers will be able to use either cToken or its underlying equivalent. The converter contract will automatically mint the cTokens, if the underlying token is deposited, otherwise the token is directly added to the pool.
 
-The same goes for users converting tokens, even if the pool contains only cToken, they will be able to choose which token to receive or to deposit cToken or its underlying token just by changing the conversion path.
+The same goes for users converting tokens, even if the pool contains only cToken, they will be able to choose which token to receive or to deposit (cToken or its underlying token) just by changing the conversion path.
 
-Other than the possibility of converting from/to any token,  cToken, underlying token and other reserve tokens contained in the pool, the liquidity providers will benefit from compound earnings since all deposited underlying token will be sent to Compound.
+Other than the possibility of converting from/to any token, the liquidity providers will benefit from compound earnings since all deposited underlying token will be sent to Compound.
 
 ## Setup
 
