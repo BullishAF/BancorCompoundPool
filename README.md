@@ -70,12 +70,12 @@ truffle migrate --reset --network external  \
 ```
 ## Example 
 
-A test example was deployed in Ropsten network, under the following addresses:
+A test example was deployed in Ropsten network under the following addresses:
 
 * Converter address: [0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314](https://ropsten.etherscan.io/address/0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314)
 * Smart Token address: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
 
-Path allowed by the converter and successful transactions example, are listed below:
+Path allowed by the converter and successful transactions example:
 
 - [[BNT,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x358110ffa5babe668db6bc74f35d188c0e06b0ab87fc06185aadd71018b3c21d)
 - [[BNT,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa2088c24e87cb2a8253e7c2adf0dee1e8abed16e3b3b5576d4e3d5a511d7d207)
@@ -93,7 +93,7 @@ Path allowed by the converter and successful transactions example, are listed be
 - [[SMARTTOKEN,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x19b284d8a62e8a3aa4d3f21a2bcd7ea8ee2e4dc60d474943d820def25a5780a9)
 - [[SMARTTOKEN,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa925d275515a9da769203641be5044aa4c942d83418bcef1f582636858bf418f)
 
-Token addresses:
+Token addresses (ropsten network):
 
 - Smart Token: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
 - cDai: [0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF](https://ropsten.etherscan.io/address/0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF)
