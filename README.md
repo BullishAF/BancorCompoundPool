@@ -105,7 +105,7 @@ For this example DAI/cDAI was selected, but any onther token can be deployed usi
 #### Funding and Liquidate tests on ropsten:
 
 - Funding using [[DAI/BNT]](https://ropsten.etherscan.io/tx/0x99e24e62f7d2c468ba8b63fedf89756fa04b80a839e3f0e505b2a055021144d8).
-- Funding using [[cDAI/BNT]](1https://ropsten.etherscan.io/tx/0x9270210f4f2a626dfd36af6ad923d53c08a35fcc07f5c45cad7970a757a61928).
+- Funding using [[cDAI/BNT]](https://ropsten.etherscan.io/tx/0x9270210f4f2a626dfd36af6ad923d53c08a35fcc07f5c45cad7970a757a61928).
 - Liquidation [[DAI/BNT]](https://ropsten.etherscan.io/tx/0x3728d56b4795ba1a79690894d1c6316ba8bfab9f4adc61c46257d390e184bd50).
 
 When funding, following the balance and the approval amount the smart contract automatically select between DAI and cDAI
