@@ -75,7 +75,9 @@ A test example was deployed in Ropsten network under the following addresses:
 * Converter address: [0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314](https://ropsten.etherscan.io/address/0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314)
 * Smart Token address: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
 
-Path allowed by the converter and successful transactions example:
+For this example DAI/cDAI was selected, but any onther token can be deployed using the steps described above.
+
+#### Path allowed by the converter and successful transactions example:
 
 - [[BNT,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x358110ffa5babe668db6bc74f35d188c0e06b0ab87fc06185aadd71018b3c21d)
 - [[BNT,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa2088c24e87cb2a8253e7c2adf0dee1e8abed16e3b3b5576d4e3d5a511d7d207)
@@ -93,9 +95,17 @@ Path allowed by the converter and successful transactions example:
 - [[SMARTTOKEN,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x19b284d8a62e8a3aa4d3f21a2bcd7ea8ee2e4dc60d474943d820def25a5780a9)
 - [[SMARTTOKEN,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa925d275515a9da769203641be5044aa4c942d83418bcef1f582636858bf418f)
 
-Token addresses (ropsten network):
+#### Token addresses (ropsten network):
 
 - Smart Token: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
 - cDai: [0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF](https://ropsten.etherscan.io/address/0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF)
 - DAI: [0xB5E5D0F8C0cbA267CD3D7035d6AdC8eBA7Df7Cdd](https://ropsten.etherscan.io/address/0xB5E5D0F8C0cbA267CD3D7035d6AdC8eBA7Df7Cdd)
 - BNT: [0x62bd9D98d4E188e281D7B78e29334969bbE1053c](https://ropsten.etherscan.io/address/0x62bd9D98d4E188e281D7B78e29334969bbE1053c)
+
+#### Funding and Liquidate tests on ropsten:
+
+- Funding using [[DAI/BNT]](https://ropsten.etherscan.io/tx/0x99e24e62f7d2c468ba8b63fedf89756fa04b80a839e3f0e505b2a055021144d8).
+- Funding using [[cDAI/BNT]](1https://ropsten.etherscan.io/tx/0x9270210f4f2a626dfd36af6ad923d53c08a35fcc07f5c45cad7970a757a61928).
+- Liquidation [[DAI/BNT]](https://ropsten.etherscan.io/tx/0x3728d56b4795ba1a79690894d1c6316ba8bfab9f4adc61c46257d390e184bd50).
+
+When funding, following the balance and the approval amount the smart contract automatically select between DAI and cDAI
