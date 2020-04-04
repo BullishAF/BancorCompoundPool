@@ -1,0 +1,2144 @@
+{
+  "contractName": "TestCrowdsaleController",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "BTCS_ETHER_CAP",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "TOKEN_PRICE_D",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "bancorX",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "contributeETH",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "DURATION",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_contribution",
+          "type": "uint256"
+        }
+      ],
+      "name": "computeReturn",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferTokenOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "endTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalEtherCap",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptTokenOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "beneficiary",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawFromToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "TOKEN_PRICE_N",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "startTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "realEtherCapHash",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_cap",
+          "type": "uint256"
+        },
+        {
+          "name": "_key",
+          "type": "uint256"
+        }
+      ],
+      "name": "enableRealCap",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "contributeBTCs",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalEtherContributed",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "btcs",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "newOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_bancorX",
+          "type": "address"
+        }
+      ],
+      "name": "setBancorX",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_cap",
+          "type": "uint256"
+        },
+        {
+          "name": "_key",
+          "type": "uint256"
+        }
+      ],
+      "name": "computeRealCap",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MAX_GAS_PRICE",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "BTCS_ETHER_CAP_SMALL",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_startTime",
+          "type": "uint256"
+        },
+        {
+          "name": "_beneficiary",
+          "type": "address"
+        },
+        {
+          "name": "_btcs",
+          "type": "address"
+        },
+        {
+          "name": "_realEtherCapHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_startTimeOverride",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_contributor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_return",
+          "type": "uint256"
+        }
+      ],
+      "name": "Contribution",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_prevOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerUpdate",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"BTCS_ETHER_CAP\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"TOKEN_PRICE_D\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"bancorX\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"contributeETH\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"DURATION\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_contribution\",\"type\":\"uint256\"}],\"name\":\"computeReturn\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferTokenOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"endTime\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalEtherCap\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptTokenOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"beneficiary\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrawFromToken\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"TOKEN_PRICE_N\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrawTokens\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"startTime\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"realEtherCapHash\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_cap\",\"type\":\"uint256\"},{\"name\":\"_key\",\"type\":\"uint256\"}],\"name\":\"enableRealCap\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"contributeBTCs\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalEtherContributed\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"btcs\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_bancorX\",\"type\":\"address\"}],\"name\":\"setBancorX\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_cap\",\"type\":\"uint256\"},{\"name\":\"_key\",\"type\":\"uint256\"}],\"name\":\"computeRealCap\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MAX_GAS_PRICE\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BTCS_ETHER_CAP_SMALL\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"claimTokens\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_startTime\",\"type\":\"uint256\"},{\"name\":\"_beneficiary\",\"type\":\"address\"},{\"name\":\"_btcs\",\"type\":\"address\"},{\"name\":\"_realEtherCapHash\",\"type\":\"bytes32\"},{\"name\":\"_startTimeOverride\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_contributor\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"_return\",\"type\":\"uint256\"}],\"name\":\"Contribution\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_prevOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnerUpdate\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"acceptOwnership()\":{\"details\":\"used by a new owner to accept an ownership transfer\\r\"},\"acceptTokenOwnership()\":{\"details\":\"used by a new owner to accept a token ownership transfer\\r can only be called by the contract owner\\r\"},\"claimTokens(address,uint256)\":{\"details\":\"allows the associated BancorX contract to claim tokens from any address (so that users\\r dont have to first give allowance when calling BancorX)\\r \\r\",\"params\":{\"_amount\":\"the amount of tokens to claim\\r\",\"_from\":\"address to claim the tokens from\\r\"}},\"computeRealCap(uint256,uint256)\":{\"details\":\"computes the real cap based on the given cap & key\\r \\r\",\"params\":{\"_cap\":\"cap\\r\",\"_key\":\"key used to compute the cap hash\\r \\r\"},\"return\":\"computed real cap hash\\r\"},\"computeReturn(uint256)\":{\"details\":\"computes the number of tokens that should be issued for a given contribution\\r \\r\",\"params\":{\"_contribution\":\"contribution amount\\r \\r\"},\"return\":\"computed number of tokens\\r\"},\"contributeBTCs()\":{\"details\":\"Contribution through BTCs (Bitcoin Suisse only)\\r can only be called before the crowdsale started\\r \\r\",\"return\":\"tokens issued in return\\r\"},\"contributeETH()\":{\"details\":\"ETH contribution\\r can only be called during the crowdsale\\r \\r\",\"return\":\"tokens issued in return\\r\"},\"enableRealCap(uint256,uint256)\":{\"details\":\"enables the real cap defined on deployment\\r \\r\",\"params\":{\"_cap\":\"predefined cap\\r\",\"_key\":\"key used to compute the cap hash\\r\"}},\"setBancorX(address)\":{\"details\":\"allows the owner to set the associated BancorX contract\\r\",\"params\":{\"_bancorX\":\"BancorX contract\\r\"}},\"transferOwnership(address)\":{\"details\":\"allows transferring the contract ownership\\r the new owner still needs to accept the transfer\\r can only be called by the contract owner\\r \\r\",\"params\":{\"_newOwner\":\"new contract owner\\r\"}},\"transferTokenOwnership(address)\":{\"details\":\"allows transferring the token ownership\\r the new owner needs to accept the transfer\\r can only be called by the contract owner\\r \\r\",\"params\":{\"_newOwner\":\"new token owner\\r\"}},\"withdrawFromToken(address,address,uint256)\":{\"details\":\"withdraws tokens held by the controller and sends them to an account\\r can only be called by the owner\\r \\r\",\"params\":{\"_amount\":\"amount to withdraw\\r\",\"_to\":\"account to receive the new amount\\r\",\"_token\":\"ERC20 token contract address\\r\"}},\"withdrawTokens(address,address,uint256)\":{\"details\":\"withdraws tokens held by the contract and sends them to an account\\r can only be called by the owner\\r \\r\",\"params\":{\"_amount\":\"amount to withdraw\\r\",\"_to\":\"account to receive the new amount\\r\",\"_token\":\"ERC20 token contract address\\r\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/helpers/TestCrowdsaleController.sol\":\"TestCrowdsaleController\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":2000},\"remappings\":[]},\"sources\":{\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/crowdsale/CrowdsaleController.sol\":{\"keccak256\":\"0xd54ac7841f0387f8474e7ab788ad598c8513267761f0148fb7893f4d46c50d06\",\"urls\":[\"bzzr://a0d19d8da71053cc0b4144e658a5b2d442cfe50d60b45c905d5ee737818d812e\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/helpers/TestCrowdsaleController.sol\":{\"keccak256\":\"0x1127bbb08c50cc280dd87127b10238a1ca990431465419483198d69c006b11a7\",\"urls\":[\"bzzr://4b144f7aa0cabeab87f5318a2cfec068afe6ae97a239e075dfe5fac1b7fc31c7\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/token/SmartTokenController.sol\":{\"keccak256\":\"0xdfbb644f0c6d595c4250d1b3dc285b84eb55f83671e9cca27060aa9c1c3815a0\",\"urls\":[\"bzzr://a210e451eed7b78bf2e74bf31f8be2a2127b77c6e5af0241aa6790067e305c80\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/token/interfaces/IERC20Token.sol\":{\"keccak256\":\"0xc1dbe021e4c5a19475048b9894ef9f1e25b922258724185ad051e54ad11c37cd\",\"urls\":[\"bzzr://f2c3cf6469aa2fdaff4b4c620f5404811d7a7c2db2231ca15e41b1b7b58526f9\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/token/interfaces/INonStandardERC20.sol\":{\"keccak256\":\"0xcd642e7946e6781417be0f80ce5c15249cc6a822ac1f393eba746edb57b2a51c\",\"urls\":[\"bzzr://729a3ef24b26d3425eca5a3b6dca9d902e4695ec03f1970937f9cec194d97b80\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/token/interfaces/ISmartToken.sol\":{\"keccak256\":\"0x625bca84d2d9d821993ab70286b8862a5dd5e314a15939012de4907ce2994b39\",\"urls\":[\"bzzr://6add47367a0d036ca02ea19688b73472ba2d0a762d1cbbb4ca8558ba98c702d6\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/token/interfaces/ISmartTokenController.sol\":{\"keccak256\":\"0xdb60fe6c7948bac7167404ce6076cdbe161c8b9b2920b55bfc07372a2371ca53\",\"urls\":[\"bzzr://60732d5e3d7edb31f854950679c457a013cb26db75de84ff4fbbd24cdaa5b56b\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/Owned.sol\":{\"keccak256\":\"0xce659c948fd6e652d14c1e98790fcbaac7e2b2cfb25f7fe40a723055f7403396\",\"urls\":[\"bzzr://c281f9a24b13a168b9e720444280dc9f125646e388d5a3e579a7850376f26c25\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/SafeMath.sol\":{\"keccak256\":\"0x3cc745bed1f0adbfc77c9b97470ed57d92a204e82bde521a1385f175bb7b72ba\",\"urls\":[\"bzzr://7d40829f07a663162f8f9b57ff8107f3c7f4dbb737ecd93ba20868b25c9af830\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/TokenHolder.sol\":{\"keccak256\":\"0x88e04f516c4dd0d83973edfd7301785656217768b07453ab50586fc4df0441a9\",\"urls\":[\"bzzr://39d021980ecf43e4fc24a97af237a0c711d37c19eccef93b07ef4342ccd7ccfa\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/Utils.sol\":{\"keccak256\":\"0x6de760a463f6105446988b7bdcacc3dc525fdef4359a15a25cc0822e317c6b9a\",\"urls\":[\"bzzr://cbe079a4723e79f1b662a309c48ed9b32f4ce969b3dce2d080a151aef495c001\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/interfaces/IOwned.sol\":{\"keccak256\":\"0x738d19fc1c5a71283c0bc400278e775b21c0cbf62c03852abde81ded30c9ba0f\",\"urls\":[\"bzzr://9064b8a0c73cdb04eb3c84519f8c53382881977c0b2de18532d9fa59148934de\"]},\"/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/interfaces/ITokenHolder.sol\":{\"keccak256\":\"0xe652e6fb418265340bb9704e5ad9c33173de6ed6efc95114112915a8675ae9a3\",\"urls\":[\"bzzr://d537e87dd6bc47263da27a6a4e97fcebfc31bb5aa2e3a3d5082e3ef787a0e591\"]}},\"version\":1}",
+  "bytecode": "0x60c0604052600360808190527f302e31000000000000000000000000000000000000000000000000000000000060a09081526200004091600491906200019c565b5060006005819055600681905569d3c21bcecceda1000000600755600855600a8054600160a060020a0319908116909155600b805490911690553480156200008757600080fd5b5060405160c080620015c983398101604090815281516020830151918301516060840151608085015160a09095015160008054600160a060020a031916331790559294919290919085858585858480600160a060020a0381161515620000ec57600080fd5b5060028054600160a060020a031916600160a060020a039283161790558390811615156200011957600080fd5b82600160a060020a03811615156200013057600080fd5b854281116200013b57fe5b83600081116200014a57600080fd5b5050600a8054600160a060020a03968716600160a060020a031991821617909155600b805495909616941693909317909355600955505050600582905550621275000160065550620002419350505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10620001df57805160ff19168380011785556200020f565b828001600101855582156200020f579182015b828111156200020f578251825591602001919060010190620001f2565b506200021d92915062000221565b5090565b6200023e91905b808211156200021d576000815560010162000228565b90565b61137880620002516000396000f30060806040526004361061018a5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166301d1c7fd81146101955780630d2806ad146101bc5780631120a776146101d1578063175323a81461020f5780631be05289146102175780631fc3a5191461022c57806321e6b53d146102445780633197cbb61461027457806334971dd61461028957806338a5e0161461029e57806338af3eed146102b357806341a5b33d146102c857806345cfad3e146102ff57806354fd4d50146103145780635e35359e1461039e57806378e97925146103d557806379ba5097146103ea5780638da5cb5b146103ff578063aa4bdd3b14610414578063ad03abc514610429578063b3cffc6e14610444578063b591fc691461044c578063bb63224414610461578063d4ee1d9014610476578063d924f0c31461048b578063e2119c80146104b9578063e3bbb4f1146104d4578063ebaf2f3a146104e9578063f2fde38b146104fe578063fc0c546a1461052c578063fe417fa514610541575b610192610572565b50005b3480156101a157600080fd5b506101aa6105a0565b60408051918252519081900360200190f35b3480156101c857600080fd5b506101aa6105ae565b3480156101dd57600080fd5b506101e66105b3565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6101aa610572565b34801561022357600080fd5b506101aa6105cf565b34801561023857600080fd5b506101aa6004356105d6565b34801561025057600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610600565b005b34801561028057600080fd5b506101aa6106b3565b34801561029557600080fd5b506101aa6106b9565b3480156102aa57600080fd5b506102726106bf565b3480156102bf57600080fd5b506101e6610783565b3480156102d457600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff6004358116906024351660443561079f565b34801561030b57600080fd5b506101aa610863565b34801561032057600080fd5b50610329610868565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561036357818101518382015260200161034b565b50505050905090810190601f1680156103905780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103aa57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff600435811690602435166044356108f6565b3480156103e157600080fd5b506101aa610a47565b3480156103f657600080fd5b50610272610a4d565b34801561040b57600080fd5b506101e6610afc565b34801561042057600080fd5b506101aa610b18565b34801561043557600080fd5b50610272600435602435610b1e565b6101aa610c4d565b34801561045857600080fd5b506101aa610ca4565b34801561046d57600080fd5b506101e6610caa565b34801561048257600080fd5b506101e6610cc6565b34801561049757600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610ce2565b3480156104c557600080fd5b506101aa600435602435610d42565b3480156104e057600080fd5b506101aa610dec565b3480156104f557600080fd5b506101aa610df5565b34801561050a57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610e01565b34801561053857600080fd5b506101e6610e89565b34801561054d57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516602435610ea5565b600060055460065481421015801561058957508042105b151561059157fe5b610599610ff1565b9250505090565b690a968163f0a57b40000081565b606481565b60035473ffffffffffffffffffffffffffffffffffffffff1681565b6212750081565b60006105fa60016105ee84606463ffffffff6112de16565b9063ffffffff61131716565b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461062457600080fd5b600254604080517ff2fde38b00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301529151919092169163f2fde38b91602480830192600092919082900301818387803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b5050505050565b60065481565b60075481565b60005473ffffffffffffffffffffffffffffffffffffffff1633146106e357600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166379ba50976040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b15801561076957600080fd5b505af115801561077d573d6000803e3d6000fd5b50505050565b600a5473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff1633146107c357600080fd5b600254604080517f5e35359e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff868116600483015285811660248301526044820185905291519190921691635e35359e91606480830192600092919082900301818387803b15801561084657600080fd5b505af115801561085a573d6000803e3d6000fd5b50505050505050565b600181565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108ee5780601f106108c3576101008083540402835291602001916108ee565b820191906000526020600020905b8154815290600101906020018083116108d157829003601f168201915b505050505081565b60005473ffffffffffffffffffffffffffffffffffffffff16331461091a57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff8116151561093d57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff8116151561096057600080fd5b8373ffffffffffffffffffffffffffffffffffffffff811630141561098457600080fd5b8573ffffffffffffffffffffffffffffffffffffffff1663a9059cbb86866040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050600060405180830381600087803b158015610a2757600080fd5b505af1158015610a3b573d6000803e3d6000fd5b50505050505050505050565b60055481565b60015473ffffffffffffffffffffffffffffffffffffffff163314610a7157600080fd5b6001546000805460405173ffffffffffffffffffffffffffffffffffffffff93841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff1990811673ffffffffffffffffffffffffffffffffffffffff841617909155169055565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60095481565b60005473ffffffffffffffffffffffffffffffffffffffff163314610b4257600080fd5b600254604080517f8da5cb5b0000000000000000000000000000000000000000000000000000000081529051309273ffffffffffffffffffffffffffffffffffffffff1691638da5cb5b9160048083019260209291908290030181600087803b158015610bae57600080fd5b505af1158015610bc2573d6000803e3d6000fd5b505050506040513d6020811015610bd857600080fd5b505173ffffffffffffffffffffffffffffffffffffffff1614610bfa57600080fd5b600554600654814210158015610c0f57508042105b1515610c1757fe5b60095484908490610c288383610d42565b14610c3257600080fd5b6007548610610c4057600080fd5b5050506007929092555050565b600b5460009073ffffffffffffffffffffffffffffffffffffffff163314610c7157fe5b34671bc16d674ec80000610c908260085461133a90919063ffffffff16565b1115610c9857fe5b60055442811161059157fe5b60085481565b600b5473ffffffffffffffffffffffffffffffffffffffff1681565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314610d0657600080fd5b6003805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6000828260405160200180838152602001828152602001925050506040516020818303038152906040526040518082805190602001908083835b60208310610db957805182527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe09092019160209182019101610d7c565b5181516020939093036101000a600019018019909116921691909117905260405192018290039091209695505050505050565b640ba43b740081565b671bc16d674ec8000081565b60005473ffffffffffffffffffffffffffffffffffffffff163314610e2557600080fd5b60005473ffffffffffffffffffffffffffffffffffffffff82811691161415610e4d57600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b60025473ffffffffffffffffffffffffffffffffffffffff1681565b60035473ffffffffffffffffffffffffffffffffffffffff163314610ec957600080fd5b600254604080517fa24835d100000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152602482018590529151919092169163a24835d191604480830192600092919082900301818387803b158015610f4457600080fd5b505af1158015610f58573d6000803e3d6000fd5b5050600254604080517f867904b400000000000000000000000000000000000000000000000000000000815233600482015260248101869052905173ffffffffffffffffffffffffffffffffffffffff909216935063867904b4925060448082019260009290919082900301818387803b158015610fd557600080fd5b505af1158015610fe9573d6000803e3d6000fd5b505050505050565b6000803073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561109157600080fd5b505af11580156110a5573d6000803e3d6000fd5b505050506040513d60208110156110bb57600080fd5b505173ffffffffffffffffffffffffffffffffffffffff16146110dd57600080fd5b346007546110f68260085461133a90919063ffffffff16565b11156110fe57fe5b640ba43b74003a111561110d57fe5b611116346105d6565b600a5460405191935073ffffffffffffffffffffffffffffffffffffffff16903480156108fc02916000818181858888f1935050505015801561115d573d6000803e3d6000fd5b50600854611171903463ffffffff61133a16565b600855600254604080517f867904b400000000000000000000000000000000000000000000000000000000815233600482015260248101859052905173ffffffffffffffffffffffffffffffffffffffff9092169163867904b49160448082019260009290919082900301818387803b1580156111ed57600080fd5b505af1158015611201573d6000803e3d6000fd5b5050600254600a54604080517f867904b400000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015260248101889052905191909216935063867904b49250604480830192600092919082900301818387803b15801561128357600080fd5b505af1158015611297573d6000803e3d6000fd5b5050604080513481526020810186905281513394507f5f7675b09617d2c9fa4fd13058ee5877a9538f626b0308816736e83748a4504093509081900390910190a250919050565b6000808315156112f15760009150611310565b5082820282848281151561130157fe5b041461130c57600080fd5b8091505b5092915050565b60008080831161132657600080fd5b828481151561133157fe5b04949350505050565b60008282018381101561130c57600080fd00a165627a7a7230582050c4a712ed3702dc4127e82ba6404202bd40ee3027d7c3b4d29f612782e8002c0029",
+  "deployedBytecode": "0x60806040526004361061018a5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166301d1c7fd81146101955780630d2806ad146101bc5780631120a776146101d1578063175323a81461020f5780631be05289146102175780631fc3a5191461022c57806321e6b53d146102445780633197cbb61461027457806334971dd61461028957806338a5e0161461029e57806338af3eed146102b357806341a5b33d146102c857806345cfad3e146102ff57806354fd4d50146103145780635e35359e1461039e57806378e97925146103d557806379ba5097146103ea5780638da5cb5b146103ff578063aa4bdd3b14610414578063ad03abc514610429578063b3cffc6e14610444578063b591fc691461044c578063bb63224414610461578063d4ee1d9014610476578063d924f0c31461048b578063e2119c80146104b9578063e3bbb4f1146104d4578063ebaf2f3a146104e9578063f2fde38b146104fe578063fc0c546a1461052c578063fe417fa514610541575b610192610572565b50005b3480156101a157600080fd5b506101aa6105a0565b60408051918252519081900360200190f35b3480156101c857600080fd5b506101aa6105ae565b3480156101dd57600080fd5b506101e66105b3565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6101aa610572565b34801561022357600080fd5b506101aa6105cf565b34801561023857600080fd5b506101aa6004356105d6565b34801561025057600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610600565b005b34801561028057600080fd5b506101aa6106b3565b34801561029557600080fd5b506101aa6106b9565b3480156102aa57600080fd5b506102726106bf565b3480156102bf57600080fd5b506101e6610783565b3480156102d457600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff6004358116906024351660443561079f565b34801561030b57600080fd5b506101aa610863565b34801561032057600080fd5b50610329610868565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561036357818101518382015260200161034b565b50505050905090810190601f1680156103905780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103aa57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff600435811690602435166044356108f6565b3480156103e157600080fd5b506101aa610a47565b3480156103f657600080fd5b50610272610a4d565b34801561040b57600080fd5b506101e6610afc565b34801561042057600080fd5b506101aa610b18565b34801561043557600080fd5b50610272600435602435610b1e565b6101aa610c4d565b34801561045857600080fd5b506101aa610ca4565b34801561046d57600080fd5b506101e6610caa565b34801561048257600080fd5b506101e6610cc6565b34801561049757600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610ce2565b3480156104c557600080fd5b506101aa600435602435610d42565b3480156104e057600080fd5b506101aa610dec565b3480156104f557600080fd5b506101aa610df5565b34801561050a57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516610e01565b34801561053857600080fd5b506101e6610e89565b34801561054d57600080fd5b5061027273ffffffffffffffffffffffffffffffffffffffff60043516602435610ea5565b600060055460065481421015801561058957508042105b151561059157fe5b610599610ff1565b9250505090565b690a968163f0a57b40000081565b606481565b60035473ffffffffffffffffffffffffffffffffffffffff1681565b6212750081565b60006105fa60016105ee84606463ffffffff6112de16565b9063ffffffff61131716565b92915050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461062457600080fd5b600254604080517ff2fde38b00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84811660048301529151919092169163f2fde38b91602480830192600092919082900301818387803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b5050505050565b60065481565b60075481565b60005473ffffffffffffffffffffffffffffffffffffffff1633146106e357600080fd5b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166379ba50976040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b15801561076957600080fd5b505af115801561077d573d6000803e3d6000fd5b50505050565b600a5473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff1633146107c357600080fd5b600254604080517f5e35359e00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff868116600483015285811660248301526044820185905291519190921691635e35359e91606480830192600092919082900301818387803b15801561084657600080fd5b505af115801561085a573d6000803e3d6000fd5b50505050505050565b600181565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156108ee5780601f106108c3576101008083540402835291602001916108ee565b820191906000526020600020905b8154815290600101906020018083116108d157829003601f168201915b505050505081565b60005473ffffffffffffffffffffffffffffffffffffffff16331461091a57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff8116151561093d57600080fd5b8273ffffffffffffffffffffffffffffffffffffffff8116151561096057600080fd5b8373ffffffffffffffffffffffffffffffffffffffff811630141561098457600080fd5b8573ffffffffffffffffffffffffffffffffffffffff1663a9059cbb86866040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050600060405180830381600087803b158015610a2757600080fd5b505af1158015610a3b573d6000803e3d6000fd5b50505050505050505050565b60055481565b60015473ffffffffffffffffffffffffffffffffffffffff163314610a7157600080fd5b6001546000805460405173ffffffffffffffffffffffffffffffffffffffff93841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff1990811673ffffffffffffffffffffffffffffffffffffffff841617909155169055565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60095481565b60005473ffffffffffffffffffffffffffffffffffffffff163314610b4257600080fd5b600254604080517f8da5cb5b0000000000000000000000000000000000000000000000000000000081529051309273ffffffffffffffffffffffffffffffffffffffff1691638da5cb5b9160048083019260209291908290030181600087803b158015610bae57600080fd5b505af1158015610bc2573d6000803e3d6000fd5b505050506040513d6020811015610bd857600080fd5b505173ffffffffffffffffffffffffffffffffffffffff1614610bfa57600080fd5b600554600654814210158015610c0f57508042105b1515610c1757fe5b60095484908490610c288383610d42565b14610c3257600080fd5b6007548610610c4057600080fd5b5050506007929092555050565b600b5460009073ffffffffffffffffffffffffffffffffffffffff163314610c7157fe5b34671bc16d674ec80000610c908260085461133a90919063ffffffff16565b1115610c9857fe5b60055442811161059157fe5b60085481565b600b5473ffffffffffffffffffffffffffffffffffffffff1681565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314610d0657600080fd5b6003805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6000828260405160200180838152602001828152602001925050506040516020818303038152906040526040518082805190602001908083835b60208310610db957805182527fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe09092019160209182019101610d7c565b5181516020939093036101000a600019018019909116921691909117905260405192018290039091209695505050505050565b640ba43b740081565b671bc16d674ec8000081565b60005473ffffffffffffffffffffffffffffffffffffffff163314610e2557600080fd5b60005473ffffffffffffffffffffffffffffffffffffffff82811691161415610e4d57600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b60025473ffffffffffffffffffffffffffffffffffffffff1681565b60035473ffffffffffffffffffffffffffffffffffffffff163314610ec957600080fd5b600254604080517fa24835d100000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8581166004830152602482018590529151919092169163a24835d191604480830192600092919082900301818387803b158015610f4457600080fd5b505af1158015610f58573d6000803e3d6000fd5b5050600254604080517f867904b400000000000000000000000000000000000000000000000000000000815233600482015260248101869052905173ffffffffffffffffffffffffffffffffffffffff909216935063867904b4925060448082019260009290919082900301818387803b158015610fd557600080fd5b505af1158015610fe9573d6000803e3d6000fd5b505050505050565b6000803073ffffffffffffffffffffffffffffffffffffffff16600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b15801561109157600080fd5b505af11580156110a5573d6000803e3d6000fd5b505050506040513d60208110156110bb57600080fd5b505173ffffffffffffffffffffffffffffffffffffffff16146110dd57600080fd5b346007546110f68260085461133a90919063ffffffff16565b11156110fe57fe5b640ba43b74003a111561110d57fe5b611116346105d6565b600a5460405191935073ffffffffffffffffffffffffffffffffffffffff16903480156108fc02916000818181858888f1935050505015801561115d573d6000803e3d6000fd5b50600854611171903463ffffffff61133a16565b600855600254604080517f867904b400000000000000000000000000000000000000000000000000000000815233600482015260248101859052905173ffffffffffffffffffffffffffffffffffffffff9092169163867904b49160448082019260009290919082900301818387803b1580156111ed57600080fd5b505af1158015611201573d6000803e3d6000fd5b5050600254600a54604080517f867904b400000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff928316600482015260248101889052905191909216935063867904b49250604480830192600092919082900301818387803b15801561128357600080fd5b505af1158015611297573d6000803e3d6000fd5b5050604080513481526020810186905281513394507f5f7675b09617d2c9fa4fd13058ee5877a9538f626b0308816736e83748a4504093509081900390910190a250919050565b6000808315156112f15760009150611310565b5082820282848281151561130157fe5b041461130c57600080fd5b8091505b5092915050565b60008080831161132657600080fd5b828481151561133157fe5b04949350505050565b60008282018381101561130c57600080fd00a165627a7a7230582050c4a712ed3702dc4127e82ba6404202bd40ee3027d7c3b4d29f612782e8002c0029",
+  "sourceMap": "1069:29:20:-;141:762:26;1069:29:20;;141:762:26;1069:29:20;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1134:1:20;1107:28;;;;1197:26;;;;1316:13;1285:44;;1456:40;;1675:39;;;-1:-1:-1;;;;;;1675:39:20;;;;;;1774:32;;;;;;;;347:387:26;5:2:-1;;;;30:1;27;20:12;5:2;347:387:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;559:5:44;:18;;-1:-1:-1;;;;;;559:18:44;567:10;559:18;;;347:387:26;;;;;;;;;;;;;;-1:-1:-1;;;;;457:22:47;;;;449:31;;;;;;-1:-1:-1;1470:5:35;:14;;-1:-1:-1;;;;;;1470:14:35;-1:-1:-1;;;;;1470:14:35;;;;;;2513:12:20;;457:22:47;;;;449:31;;;;;;2549:5:20;-1:-1:-1;;;;;457:22:47;;;;449:31;;;;;;2577:10:20;3326:3;:11;-1:-1:-1;3319:19:20;;;;2622:17;296:1:47;286:11;;278:20;;;;;;-1:-1:-1;;2732:11:20;:26;;-1:-1:-1;;;;;2732:26:20;;;-1:-1:-1;;;;;;2732:26:20;;;;;;;2769:4;:12;;;;;;;;;;;;;;;2792:16;:36;-1:-1:-1;;;2658:9:20;657:30:26;;;-1:-1:-1;585:7:20;707:20:26;2691:7:20;697:30:26;-1:-1:-1;141:762:26;;-1:-1:-1;;;;141:762:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;141:762:26;;;-1:-1:-1;141:762:26;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "141:762:26:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7179:15:20;:13;:15::i;:::-;;141:762:26;841:52:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;841:52:20;;;;;;;;;;;;;;;;;;;;738:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;738:43:20;;;;1164:22:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1164:22:35;;;;;;;;;;;;;;;;;;;;;;;5552:181:20;;;;550:42;;8:9:-1;5:2;;;30:1;27;20:12;5:2;550:42:20;;;;5243:153;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;5243:153:20;;;;;2040:121:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2040:121:35;;;;;;;;;1197:26:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1197:26:20;;;;1285:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1285:44:20;;;;2307:91:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2307:91:35;;;;1675:39:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1675:39:20;;;;2714:169:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2714:169:35;;;;;;;;;;;;;;637:41:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;637:41:20;;;;1069:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1069:29:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1069:29:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1263:260:46;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1263:260:46;;;;;;;;;;;;;;1107:28:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1107:28:20;;;;1193:187:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1193:187:44;;;;167:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;167:20:44;;;;1537:31:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1537:31:20;;;;4735:276;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4735:276:20;;;;;;;5928:238;;;;1456:40;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1456:40:20;;;;1774:32;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1774:32:20;;;;194:23:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:23:44;;;;3695:92:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3695:92:35;;;;;;;4400:147:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4400:147:20;;;;;;;951:55;;8:9:-1;5:2;;;30:1;27;20:12;5:2;951:55:20;;;;241:54:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;241:54:26;;;;962:140:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;962:140:44;;;;;;;1107:24:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1107:24:35;;;;3202:352;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3202:352:35;;;;;;;;;5552:181:20;5665:14;5627:9;;5638:7;;3543:10;3536:3;:17;;:35;;;;;3563:8;3557:3;:14;3536:35;3529:43;;;;;;5704:21;:19;:21::i;:::-;5697:28;;5552:181;;;:::o;841:52::-;882:11;841:52;:::o;738:43::-;778:3;738:43;:::o;1164:22:35:-;;;;;;:::o;550:42:20:-;585:7;550:42;:::o;5243:153::-;5310:7;5337:51;677:1;5337:32;:13;778:3;5337:32;:17;:32;:::i;:::-;:36;:51;:36;:51;:::i;:::-;5330:58;5243:153;-1:-1:-1;;5243:153:20:o;2040:121:35:-;688:5:44;;;;674:10;:19;666:28;;;;;;2119:5:35;;:34;;;;;;:5;:34;;;;;;;;;:5;;;;;:23;;:34;;;;;:5;;:34;;;;;;;:5;;:34;;;5:2:-1;;;;30:1;27;20:12;5:2;2119:34:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2119:34:35;;;;2040:121;:::o;1197:26:20:-;;;;:::o;1285:44::-;;;;:::o;2307:91:35:-;688:5:44;;;;674:10;:19;666:28;;;;;;2367:5:35;;;;;;;;;;;:21;;;:23;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2367:23:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2367:23:35;;;;2307:91::o;1675:39:20:-;;;;;;:::o;2714:169:35:-;688:5:44;;;;674:10;:19;666:28;;;;;;2832:5:35;;2819:56;;;;;;2832:5;2819:56;;;;;;;;;;;;;;;;;;;;;;2832:5;;;;;2819:34;;:56;;;;;2832:5;;2819:56;;;;;;;2832:5;;2819:56;;;5:2:-1;;;;30:1;27;20:12;5:2;2819:56:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2819:56:35;;;;2714:169;;;:::o;637:41:20:-;677:1;637:41;:::o;1069:29::-;;;;;;;;;;;;;;;-1:-1:-1;;1069:29:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1263:260:46:-;688:5:44;;;;674:10;:19;666:28;;;;;;1394:6:46;457:22:47;;;;;449:31;;;;;;1424:3:46;457:22:47;;;;;449:31;;;;;;1446:3:46;636:25:47;;;656:4;636:25;;628:34;;;;;;1485:6:46;1467:34;;;1502:3;1507:7;1467:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1467:48:46;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1467:48:46;;;;491:1:47;;705::44;1263:260:46;;;:::o;1107:28:20:-;;;;:::o;1193:187:44:-;1260:8;;;;1246:10;:22;1238:31;;;;;;1304:8;;;1297:5;;1285:28;;1304:8;;;;;1297:5;;;;1285:28;;;1332:8;;;;1324:16;;-1:-1:-1;;1324:16:44;;;1332:8;;;1324:16;;;;1351:21;;;1193:187::o;167:20::-;;;;;;:::o;1537:31:20:-;;;;:::o;4735:276::-;688:5:44;;;;674:10;:19;666:28;;;;;;1594:5:35;;:13;;;;;;;;1619:4;;1594:30;:5;;:11;;:13;;;;;;;;;;;;;;:5;;:13;;;5:2:-1;;;;30:1;27;20:12;5:2;1594:13:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1594:13:35;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1594:13:35;:30;;;1586:39;;;;;;4854:9:20;;4865:7;;3543:10;3536:3;:17;;:35;;;;;3563:8;3557:3;:14;3536:35;3529:43;;;;;;3173:16;;4897:4;;4903;;3143:26;4897:4;4903;3143:14;:26::i;:::-;:46;3135:55;;;;;;4940:13;;4933:20;;4925:29;;;;;;-1:-1:-1;;;4983:13:20;:20;;;;-1:-1:-1;;4735:276:20:o;5928:238::-;3702:4;;6098:14;;3702:4;;3688:10;:18;3681:26;;;;6037:9;288:7:26;815:43;841:16;815:21;;:25;;:43;;;;:::i;:::-;:67;;808:75;;;;6069:9:20;;3326:3;:11;-1:-1:-1;3319:19:20;;;1456:40;;;;:::o;1774:32::-;;;;;;:::o;194:23:44:-;;;;;;:::o;3695:92:35:-;688:5:44;;;;674:10;:19;666:28;;;;;;3761:7:35;:18;;-1:-1:-1;;3761:18:35;;;;;;;;;;;;3695:92::o;4400:147:20:-;4473:7;4527:4;4533;4510:28;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;4510:28:20;;;4500:39;;;;;;;;;;;;;36:153:-1;66:2;58:11;;36:153;;176:10;;164:23;;139:12;;;;;98:2;89:12;;;;114;36:153;;;299:10;344;;263:2;259:12;;;;254:3;250:22;-1:-1;;246:30;311:9;;295:26;;;340:21;;377:20;;;;365:33;;4500:39:20;;;;;;;;;;;;-1:-1:-1;;;;;;4400:147:20:o;951:55::-;991:15;951:55;:::o;241:54:26:-;288:7;241:54;:::o;962:140:44:-;688:5;;;;674:10;:19;666:28;;;;;;1057:5;;;1044:18;;;1057:5;;1044:18;;1036:27;;;;;;1074:8;:20;;-1:-1:-1;;1074:20:44;;;;;;;;;;;;962:140::o;1107:24:35:-;;;;;;:::o;3202:352::-;3365:7;;;;3351:10;:21;3343:30;;;;;;3474:5;;:29;;;;;;:5;:29;;;;;;;;;;;;;;;:5;;;;;:13;;:29;;;;;:5;;:29;;;;;;;:5;;:29;;;5:2:-1;;;;30:1;27;20:12;5:2;3474:29:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;3514:5:35;;:32;;;;;;3526:10;3514:32;;;;;;;;;;;;:5;;;;;-1:-1:-1;3514:11:35;;-1:-1:-1;3514:32:35;;;;;:5;;:32;;;;;;;;:5;;:32;;;5:2:-1;;;;30:1;27;20:12;5:2;3514:32:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3514:32:35;;;;3202:352;;:::o;6412:705:20:-;6547:14;6579:19;1619:4:35;1594:30;;:5;;;;;;;;;;;:11;;;:13;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1594:13:35;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1594:13:35;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1594:13:35;:30;;;1586:39;;;;;;6495:9:20;3899:13;;3855:40;3881:13;3855:21;;:25;;:40;;;;:::i;:::-;:57;;3848:65;;;;991:15;2945:11;:28;;2938:36;;;;6601:24;6615:9;6601:13;:24::i;:::-;6636:11;;:31;;6579:46;;-1:-1:-1;6636:11:20;;;6657:9;6636:31;;;;;:11;:31;:11;:31;6657:9;6636:11;:31;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;6751:21:20;;:36;;6777:9;6751:36;:25;:36;:::i;:::-;6727:21;:60;6838:5;;:36;;;;;;6850:10;6838:36;;;;;;;;;;;;:5;;;;;:11;;:36;;;;;:5;;:36;;;;;;;;:5;;:36;;;5:2:-1;;;;30:1;27;20:12;5:2;6838:36:20;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;6942:5:20;;6954:11;;6942:37;;;;;;:5;6954:11;;;6942:37;;;;;;;;;;;;:5;;;;;-1:-1:-1;6942:11:20;;-1:-1:-1;6942:37:20;;;;;:5;;:37;;;;;;;:5;;:37;;;5:2:-1;;;;30:1;27;20:12;5:2;6942:37:20;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;7032:48:20;;;7057:9;7032:48;;;;;;;;;;7045:10;;-1:-1:-1;7032:48:20;;-1:-1:-1;7032:48:20;;;;;;;;;-1:-1:-1;7098:11:20;6412:705;-1:-1:-1;6412:705:20:o;1070:234:45:-;1130:7;;1183;;1179:34;;;1212:1;1205:8;;;;1179:34;-1:-1:-1;1238:7:45;;;1243:2;1238;:7;1264:6;;;;;;;;:12;1256:21;;;;;;1295:1;1288:8;;1070:234;;;;;;:::o;1540:154::-;1600:7;;1628:6;;;1620:15;;;;;;1663:2;1658;:7;;;;;;;;;1540:154;-1:-1:-1;;;;1540:154:45:o;336:153::-;396:7;428;;;454;;;;446:16;;;;",
+  "source": "pragma solidity 0.4.26;\nimport '../crowdsale/CrowdsaleController.sol';\n\n/*\n    Test crowdsale controller with start time < now < end time\n*/\ncontract TestCrowdsaleController is CrowdsaleController {\n    using SafeMath for uint256;\n\n    \n    uint256 public constant BTCS_ETHER_CAP_SMALL = 2 ether; // maximum bitcoin suisse ether contribution\n\n    constructor(\n        ISmartToken _token,\n        uint256 _startTime,\n        address _beneficiary,\n        address _btcs,\n        bytes32 _realEtherCapHash,\n        uint256 _startTimeOverride)\n        public\n        CrowdsaleController(_token, _startTime, _beneficiary, _btcs, _realEtherCapHash)\n    {\n        startTime = _startTimeOverride;\n        endTime = startTime + DURATION;\n    }\n\n    modifier btcsEtherCapNotReached(uint256 _ethContribution) {\n        assert(totalEtherContributed.add(_ethContribution) <= BTCS_ETHER_CAP_SMALL);\n        _;\n    }\n}\n",
+  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/helpers/TestCrowdsaleController.sol",
+  "ast": {
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/helpers/TestCrowdsaleController.sol",
+    "exportedSymbols": {
+      "TestCrowdsaleController": [
+        11750
+      ]
+    },
+    "id": 11751,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11692,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".26"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:26"
+      },
+      {
+        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/crowdsale/CrowdsaleController.sol",
+        "file": "../crowdsale/CrowdsaleController.sol",
+        "id": 11693,
+        "nodeType": "ImportDirective",
+        "scope": 11751,
+        "sourceUnit": 10916,
+        "src": "24:46:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11694,
+              "name": "CrowdsaleController",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10915,
+              "src": "177:19:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CrowdsaleController_$10915",
+                "typeString": "contract CrowdsaleController"
+              }
+            },
+            "id": 11695,
+            "nodeType": "InheritanceSpecifier",
+            "src": "177:19:26"
+          }
+        ],
+        "contractDependencies": [
+          10915,
+          12845,
+          13096,
+          13728,
+          13878,
+          13925,
+          14122,
+          14138
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11750,
+        "linearizedBaseContracts": [
+          11750,
+          10915,
+          12845,
+          13878,
+          13925,
+          13728,
+          14138,
+          14122,
+          13096
+        ],
+        "name": "TestCrowdsaleController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 11698,
+            "libraryName": {
+              "contractScope": null,
+              "id": 11696,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13831,
+              "src": "209:8:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$13831",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "203:27:26",
+            "typeName": {
+              "id": 11697,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": true,
+            "id": 11701,
+            "name": "BTCS_ETHER_CAP_SMALL",
+            "nodeType": "VariableDeclaration",
+            "scope": 11750,
+            "src": "241:54:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11699,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "241:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 11700,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "288:7:26",
+              "subdenomination": "ether",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2000000000000000000_by_1",
+                "typeString": "int_const 2000000000000000000"
+              },
+              "value": "2"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11733,
+              "nodeType": "Block",
+              "src": "647:87:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11725,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11723,
+                      "name": "startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10570,
+                      "src": "657:9:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11724,
+                      "name": "_startTimeOverride",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11713,
+                      "src": "669:18:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "657:30:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11726,
+                  "nodeType": "ExpressionStatement",
+                  "src": "657:30:26"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11731,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11727,
+                      "name": "endTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10573,
+                      "src": "697:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 11730,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 11728,
+                        "name": "startTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10570,
+                        "src": "707:9:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "+",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 11729,
+                        "name": "DURATION",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10552,
+                        "src": "719:8:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "707:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "697:30:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11732,
+                  "nodeType": "ExpressionStatement",
+                  "src": "697:30:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11734,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 11716,
+                    "name": "_token",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11703,
+                    "src": "583:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11717,
+                    "name": "_startTime",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11705,
+                    "src": "591:10:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11718,
+                    "name": "_beneficiary",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11707,
+                    "src": "603:12:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11719,
+                    "name": "_btcs",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11709,
+                    "src": "617:5:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11720,
+                    "name": "_realEtherCapHash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11711,
+                    "src": "624:17:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                ],
+                "id": 11721,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 11715,
+                  "name": "CrowdsaleController",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 10915,
+                  "src": "563:19:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$10915_$",
+                    "typeString": "type(contract CrowdsaleController)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "563:79:26"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11703,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "368:18:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                    "typeString": "contract ISmartToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 11702,
+                    "name": "ISmartToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 13077,
+                    "src": "368:11:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11705,
+                  "name": "_startTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "396:18:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11704,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11707,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "424:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11706,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11709,
+                  "name": "_btcs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "454:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "454:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11711,
+                  "name": "_realEtherCapHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "477:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11710,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11713,
+                  "name": "_startTimeOverride",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "512:26:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11712,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "512:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "358:181:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11722,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "647:0:26"
+            },
+            "scope": 11750,
+            "src": "347:387:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11748,
+              "nodeType": "Block",
+              "src": "798:103:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 11744,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 11741,
+                              "name": "_ethContribution",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 11736,
+                              "src": "841:16:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 11739,
+                              "name": "totalEtherContributed",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 10579,
+                              "src": "815:21:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 11740,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "add",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13754,
+                            "src": "815:25:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                              "typeString": "function (uint256,uint256) pure returns (uint256)"
+                            }
+                          },
+                          "id": 11742,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "815:43:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 11743,
+                          "name": "BTCS_ETHER_CAP_SMALL",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11701,
+                          "src": "862:20:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "815:67:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 11738,
+                      "name": "assert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14152,
+                      "src": "808:6:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 11745,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "808:75:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11746,
+                  "nodeType": "ExpressionStatement",
+                  "src": "808:75:26"
+                },
+                {
+                  "id": 11747,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "893:1:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11749,
+            "name": "btcsEtherCapNotReached",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 11737,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11736,
+                  "name": "_ethContribution",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11749,
+                  "src": "772:24:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11735,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "772:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "771:26:26"
+            },
+            "src": "740:161:26",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 11751,
+        "src": "141:762:26"
+      }
+    ],
+    "src": "0:904:26"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/helpers/TestCrowdsaleController.sol",
+    "exportedSymbols": {
+      "TestCrowdsaleController": [
+        11750
+      ]
+    },
+    "id": 11751,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11692,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".26"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:26"
+      },
+      {
+        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/crowdsale/CrowdsaleController.sol",
+        "file": "../crowdsale/CrowdsaleController.sol",
+        "id": 11693,
+        "nodeType": "ImportDirective",
+        "scope": 11751,
+        "sourceUnit": 10916,
+        "src": "24:46:26",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11694,
+              "name": "CrowdsaleController",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10915,
+              "src": "177:19:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CrowdsaleController_$10915",
+                "typeString": "contract CrowdsaleController"
+              }
+            },
+            "id": 11695,
+            "nodeType": "InheritanceSpecifier",
+            "src": "177:19:26"
+          }
+        ],
+        "contractDependencies": [
+          10915,
+          12845,
+          13096,
+          13728,
+          13878,
+          13925,
+          14122,
+          14138
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11750,
+        "linearizedBaseContracts": [
+          11750,
+          10915,
+          12845,
+          13878,
+          13925,
+          13728,
+          14138,
+          14122,
+          13096
+        ],
+        "name": "TestCrowdsaleController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 11698,
+            "libraryName": {
+              "contractScope": null,
+              "id": 11696,
+              "name": "SafeMath",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13831,
+              "src": "209:8:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeMath_$13831",
+                "typeString": "library SafeMath"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "203:27:26",
+            "typeName": {
+              "id": 11697,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": true,
+            "id": 11701,
+            "name": "BTCS_ETHER_CAP_SMALL",
+            "nodeType": "VariableDeclaration",
+            "scope": 11750,
+            "src": "241:54:26",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11699,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "241:7:26",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "32",
+              "id": 11700,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "288:7:26",
+              "subdenomination": "ether",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2000000000000000000_by_1",
+                "typeString": "int_const 2000000000000000000"
+              },
+              "value": "2"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11733,
+              "nodeType": "Block",
+              "src": "647:87:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11725,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11723,
+                      "name": "startTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10570,
+                      "src": "657:9:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11724,
+                      "name": "_startTimeOverride",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11713,
+                      "src": "669:18:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "657:30:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11726,
+                  "nodeType": "ExpressionStatement",
+                  "src": "657:30:26"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11731,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11727,
+                      "name": "endTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10573,
+                      "src": "697:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 11730,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 11728,
+                        "name": "startTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10570,
+                        "src": "707:9:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "+",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 11729,
+                        "name": "DURATION",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10552,
+                        "src": "719:8:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "707:20:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "697:30:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11732,
+                  "nodeType": "ExpressionStatement",
+                  "src": "697:30:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11734,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 11716,
+                    "name": "_token",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11703,
+                    "src": "583:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11717,
+                    "name": "_startTime",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11705,
+                    "src": "591:10:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11718,
+                    "name": "_beneficiary",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11707,
+                    "src": "603:12:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11719,
+                    "name": "_btcs",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11709,
+                    "src": "617:5:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 11720,
+                    "name": "_realEtherCapHash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11711,
+                    "src": "624:17:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                ],
+                "id": 11721,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 11715,
+                  "name": "CrowdsaleController",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 10915,
+                  "src": "563:19:26",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$10915_$",
+                    "typeString": "type(contract CrowdsaleController)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "563:79:26"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11703,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "368:18:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                    "typeString": "contract ISmartToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 11702,
+                    "name": "ISmartToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 13077,
+                    "src": "368:11:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$13077",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11705,
+                  "name": "_startTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "396:18:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11704,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11707,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "424:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11706,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11709,
+                  "name": "_btcs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "454:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "454:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11711,
+                  "name": "_realEtherCapHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "477:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11710,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11713,
+                  "name": "_startTimeOverride",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11734,
+                  "src": "512:26:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11712,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "512:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "358:181:26"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11722,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "647:0:26"
+            },
+            "scope": 11750,
+            "src": "347:387:26",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11748,
+              "nodeType": "Block",
+              "src": "798:103:26",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 11744,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 11741,
+                              "name": "_ethContribution",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 11736,
+                              "src": "841:16:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 11739,
+                              "name": "totalEtherContributed",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 10579,
+                              "src": "815:21:26",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 11740,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "add",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13754,
+                            "src": "815:25:26",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
+                              "typeString": "function (uint256,uint256) pure returns (uint256)"
+                            }
+                          },
+                          "id": 11742,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "815:43:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 11743,
+                          "name": "BTCS_ETHER_CAP_SMALL",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11701,
+                          "src": "862:20:26",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "815:67:26",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 11738,
+                      "name": "assert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14152,
+                      "src": "808:6:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 11745,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "808:75:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11746,
+                  "nodeType": "ExpressionStatement",
+                  "src": "808:75:26"
+                },
+                {
+                  "id": 11747,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "893:1:26"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11749,
+            "name": "btcsEtherCapNotReached",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 11737,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11736,
+                  "name": "_ethContribution",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11749,
+                  "src": "772:24:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11735,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "772:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "771:26:26"
+            },
+            "src": "740:161:26",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 11751,
+        "src": "141:762:26"
+      }
+    ],
+    "src": "0:904:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.22",
+  "updatedAt": "2020-04-03T06:39:09.887Z",
+  "devdoc": {
+    "methods": {
+      "acceptOwnership()": {
+        "details": "used by a new owner to accept an ownership transfer\r"
+      },
+      "acceptTokenOwnership()": {
+        "details": "used by a new owner to accept a token ownership transfer\r can only be called by the contract owner\r"
+      },
+      "claimTokens(address,uint256)": {
+        "details": "allows the associated BancorX contract to claim tokens from any address (so that users\r dont have to first give allowance when calling BancorX)\r \r",
+        "params": {
+          "_amount": "the amount of tokens to claim\r",
+          "_from": "address to claim the tokens from\r"
+        }
+      },
+      "computeRealCap(uint256,uint256)": {
+        "details": "computes the real cap based on the given cap & key\r \r",
+        "params": {
+          "_cap": "cap\r",
+          "_key": "key used to compute the cap hash\r \r"
+        },
+        "return": "computed real cap hash\r"
+      },
+      "computeReturn(uint256)": {
+        "details": "computes the number of tokens that should be issued for a given contribution\r \r",
+        "params": {
+          "_contribution": "contribution amount\r \r"
+        },
+        "return": "computed number of tokens\r"
+      },
+      "contributeBTCs()": {
+        "details": "Contribution through BTCs (Bitcoin Suisse only)\r can only be called before the crowdsale started\r \r",
+        "return": "tokens issued in return\r"
+      },
+      "contributeETH()": {
+        "details": "ETH contribution\r can only be called during the crowdsale\r \r",
+        "return": "tokens issued in return\r"
+      },
+      "enableRealCap(uint256,uint256)": {
+        "details": "enables the real cap defined on deployment\r \r",
+        "params": {
+          "_cap": "predefined cap\r",
+          "_key": "key used to compute the cap hash\r"
+        }
+      },
+      "setBancorX(address)": {
+        "details": "allows the owner to set the associated BancorX contract\r",
+        "params": {
+          "_bancorX": "BancorX contract\r"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "allows transferring the contract ownership\r the new owner still needs to accept the transfer\r can only be called by the contract owner\r \r",
+        "params": {
+          "_newOwner": "new contract owner\r"
+        }
+      },
+      "transferTokenOwnership(address)": {
+        "details": "allows transferring the token ownership\r the new owner needs to accept the transfer\r can only be called by the contract owner\r \r",
+        "params": {
+          "_newOwner": "new token owner\r"
+        }
+      },
+      "withdrawFromToken(address,address,uint256)": {
+        "details": "withdraws tokens held by the controller and sends them to an account\r can only be called by the owner\r \r",
+        "params": {
+          "_amount": "amount to withdraw\r",
+          "_to": "account to receive the new amount\r",
+          "_token": "ERC20 token contract address\r"
+        }
+      },
+      "withdrawTokens(address,address,uint256)": {
+        "details": "withdraws tokens held by the contract and sends them to an account\r can only be called by the owner\r \r",
+        "params": {
+          "_amount": "amount to withdraw\r",
+          "_to": "account to receive the new amount\r",
+          "_token": "ERC20 token contract address\r"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

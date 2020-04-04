@@ -1,0 +1,35 @@
+{
+  "name": "BancorChallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "truffle compile",
+    "test": "truffle test --report"
+  },
+  "keywords": [
+    "Bancor",
+    "Network",
+    "Blockchain",
+    "Ethereum",
+    "Liquidity Pool",
+    "staking"
+  ],
+  "author": "github.com/ridesolo",
+  "dependencies": {
+    "npm": "^6.13.6"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.4",
+    "@truffle/hdwallet-provider": "^1.0.31",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-bn": "^0.2.0",
+    "eth-gas-reporter": "^0.2.12",
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.0.2",
+    "truffle-assertions": "^0.9.1",
+    "@truffle/contract": "^3.0.6",
+    "web3": "^1.2.6"
+  }
+}

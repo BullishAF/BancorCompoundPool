@@ -1,0 +1,3 @@
+[submodule "bancorContracts"]
+	path = bancorContracts
+	url = https://github.com/bancorprotocol/contracts.git
