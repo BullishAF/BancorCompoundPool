@@ -2,7 +2,7 @@
 
 ## Description
 
-This project aims to implement a new Bancor pool design that interacts with compound platform automatically, when deployed the pool will hold only compound tokens internally (other tokens can be added also), however, when the compound token is added the underlying token has to be specified.
+This project aims to implement a new Bancor pool design that interacts with compound platform automatically, when deployed the pool will hold only compound tokens internally (other tokens can be added also), however, when the compound token is added, the underlying token has to be specified.
 
 When funding the pool (converter), liquidity providers will be able to use either cToken or its underlying equivalent. The converter contract will automatically mint the cTokens, if the underlying token is deposited, otherwise the token is directly added to the pool.
 
@@ -77,21 +77,21 @@ A test example was deployed in Ropsten network, under the following addresses:
 
 Path allowed by the converter and successful transactions example, are listed below:
 
-- [BNT,SMARTTOKEN,DAI]:(https://ropsten.etherscan.io/tx/0x358110ffa5babe668db6bc74f35d188c0e06b0ab87fc06185aadd71018b3c21d)
-- [BNT,SMARTTOKEN,cDAI](https://ropsten.etherscan.io/tx/0xa2088c24e87cb2a8253e7c2adf0dee1e8abed16e3b3b5576d4e3d5a511d7d207)
-- [BNT,SMARTTOKEN,SMARTTOKEN](https://ropsten.etherscan.io/tx/0xa4fec89f4d0d5564057f34cd7c99b29bdf8bdcd758dc826196cd90ac62c8b76b)
+- [[BNT,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x358110ffa5babe668db6bc74f35d188c0e06b0ab87fc06185aadd71018b3c21d)
+- [[BNT,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa2088c24e87cb2a8253e7c2adf0dee1e8abed16e3b3b5576d4e3d5a511d7d207)
+- [[BNT,SMARTTOKEN,SMARTTOKEN]](https://ropsten.etherscan.io/tx/0xa4fec89f4d0d5564057f34cd7c99b29bdf8bdcd758dc826196cd90ac62c8b76b)
 
-- [DAI,SMARTTOKEN,BNT](https://ropsten.etherscan.io/tx/0x75628f253b100a8809dc59676a6dbdc9183cf030cb4d0e40ef7998aa7f502d2d)
-- [DAI,SMARTTOKEN,cDAI](https://ropsten.etherscan.io/tx/0x0202601bb2a3c20248e46cd6fb314ae283569354462102a0f6b5f83b466c4047)
-- [DAI,SMARTTOKEN,SMARTTOKEN](https://ropsten.etherscan.io/tx/0xc9e494903b4f5ac3e245a9fcff1bbc05c39cff2114f557d344ea2a336b82afa1)
+- [[DAI,SMARTTOKEN,BNT]](https://ropsten.etherscan.io/tx/0x75628f253b100a8809dc59676a6dbdc9183cf030cb4d0e40ef7998aa7f502d2d)
+- [[DAI,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0x0202601bb2a3c20248e46cd6fb314ae283569354462102a0f6b5f83b466c4047)
+- [[DAI,SMARTTOKEN,SMARTTOKEN]](https://ropsten.etherscan.io/tx/0xc9e494903b4f5ac3e245a9fcff1bbc05c39cff2114f557d344ea2a336b82afa1)
 
-- [cDAI,SMARTTOKEN,BNT](https://ropsten.etherscan.io/tx/0x8c8f41610d77cd6912678e0424afa2e615dcaa60565822217dc673d7f5376587)
-- [cDAI,SMARTTOKEN,DAI](https://ropsten.etherscan.io/tx/0x0f7ff181735c5b4523a4a5fe647296547bb7965636420e57e13b8160268ec2c9)
-- [CDAI,SMARTTOKEN,SMARTTOKEN](https://ropsten.etherscan.io/tx/0x8ea74f4ec7f5d16927ff0b9d9c6ea7cda91106f7ad56273aa9a80f361ef3932f)
+- [[cDAI,SMARTTOKEN,BNT]](https://ropsten.etherscan.io/tx/0x8c8f41610d77cd6912678e0424afa2e615dcaa60565822217dc673d7f5376587)
+- [[cDAI,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x0f7ff181735c5b4523a4a5fe647296547bb7965636420e57e13b8160268ec2c9)
+- [[CDAI,SMARTTOKEN,SMARTTOKEN]](https://ropsten.etherscan.io/tx/0x8ea74f4ec7f5d16927ff0b9d9c6ea7cda91106f7ad56273aa9a80f361ef3932f)
 
-- [SMARTTOKEN,SMARTTOKEN,BNT](https://ropsten.etherscan.io/tx/0x30f40e9032716120061b6abbf17cb239e26766eceec2a72b1e55ce7dbd0b6552)
-- [SMARTTOKEN,SMARTTOKEN,DAI](https://ropsten.etherscan.io/tx/0x19b284d8a62e8a3aa4d3f21a2bcd7ea8ee2e4dc60d474943d820def25a5780a9)
-- [SMARTTOKEN,SMARTTOKEN,cDAI](https://ropsten.etherscan.io/tx/0xa925d275515a9da769203641be5044aa4c942d83418bcef1f582636858bf418f)
+- [[SMARTTOKEN,SMARTTOKEN,BNT]](https://ropsten.etherscan.io/tx/0x30f40e9032716120061b6abbf17cb239e26766eceec2a72b1e55ce7dbd0b6552)
+- [[SMARTTOKEN,SMARTTOKEN,DAI]](https://ropsten.etherscan.io/tx/0x19b284d8a62e8a3aa4d3f21a2bcd7ea8ee2e4dc60d474943d820def25a5780a9)
+- [[SMARTTOKEN,SMARTTOKEN,cDAI]](https://ropsten.etherscan.io/tx/0xa925d275515a9da769203641be5044aa4c942d83418bcef1f582636858bf418f)
 
 Token addresses:
 
