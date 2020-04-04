@@ -108,4 +108,4 @@ For this example DAI/cDAI was selected, but any onther token can be deployed usi
 - Funding using [[cDAI/BNT]](https://ropsten.etherscan.io/tx/0x9270210f4f2a626dfd36af6ad923d53c08a35fcc07f5c45cad7970a757a61928).
 - Liquidation [[DAI/BNT]](https://ropsten.etherscan.io/tx/0x3728d56b4795ba1a79690894d1c6316ba8bfab9f4adc61c46257d390e184bd50).
 
-When funding, following the balance and the approval amount the smart contract automatically select between DAI and cDAI
+When funding, following the balance and the approval amount the smart contract automatically select between underlying token and compound token. When liquidate is used the user receive the underlying token and any other token used as reserve.
