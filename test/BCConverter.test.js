@@ -1,17 +1,17 @@
 const BCConverter = artifacts.require("BCConverter")
 const CTokenMock = artifacts.require("CTokenMock")
 
-const SmartToken = artifacts.require("../bancorContracts/solidity/build/SmartToken")
-const BancorNetwork = artifacts.require('../bancorContracts/solidity/build/BancorNetwork');
-const BancorConverter = artifacts.require('../bancorContracts/solidity/build/BancorConverter');
-const BancorFormula = artifacts.require('../bancorContracts/solidity/build/BancorFormula');
-const ContractRegistry = artifacts.require('../bancorContracts/solidity/build/ContractRegistry');
-const ContractFeatures = artifacts.require('../bancorContracts/solidity/build/ContractFeatures');
-const ERC20Token = artifacts.require('../bancorContracts/solidity/build/ERC20Token');
-const BancorConverterFactory = artifacts.require('../bancorContracts/solidity/build/BancorConverterFactory');
-const BancorConverterUpgrader = artifacts.require('../bancorContracts/solidity/build/BancorConverterUpgrader');
-const BancorConverterRegistry = artifacts.require('../bancorContracts/solidity/build/BancorConverterRegistry');
-const BancorConverterRegistryData = artifacts.require('../bancorContracts/solidity/build/BancorConverterRegistryData');
+const SmartToken = artifacts.require("SmartToken")
+const BancorNetwork = artifacts.require('BancorNetwork');
+const BancorConverter = artifacts.require('BancorConverter');
+const BancorFormula = artifacts.require('BancorFormula');
+const ContractRegistry = artifacts.require('ContractRegistry');
+const ContractFeatures = artifacts.require('ContractFeatures');
+const ERC20Token = artifacts.require('ERC20Token');
+const BancorConverterFactory = artifacts.require('BancorConverterFactory');
+const BancorConverterUpgrader = artifacts.require('BancorConverterUpgrader');
+const BancorConverterRegistry = artifacts.require('BancorConverterRegistry');
+const BancorConverterRegistryData = artifacts.require('BancorConverterRegistryData');
 
 const ContractRegistryClient = require('./helpers/ContractRegistryClient.js');
 
@@ -77,7 +77,7 @@ contract('BCConverter', (accounts) => {
     await this.smartToken.transferOwnership(this.bcConverter.address)
     await this.smartToken.issue(accounts[0],web3.utils.toWei('40'))
 
-    await this.bcConverter.setConversionFee(0)
+    await this.bcConverter.setConversionFee(30000)
     await this.bcConverter.acceptTokenOwnership()
 
     await this.converterRegistry.addConverter(this.bcConverter.address)
@@ -124,6 +124,16 @@ contract('BCConverter', (accounts) => {
     await this.bcConverter.fund(_amount)
 
   })
+  
+  it('Check getReturnByPath', async () => {
+    
+    await this.bancorNetwork.getReturnByPath([this.uToken.address, this.smartToken.address, this.bntToken.address],web3.utils.toWei("1"))
+    await this.bancorNetwork.getReturnByPath([this.uToken.address, this.smartToken.address, this.cToken.address],web3.utils.toWei("1"))
+    await this.bancorNetwork.getReturnByPath([this.uToken.address, this.smartToken.address, this.smartToken.address],web3.utils.toWei("1"))
+    await this.bancorNetwork.getReturnByPath([this.bntToken.address, this.smartToken.address, this.uToken.address],web3.utils.toWei("1"))
+    await this.bancorNetwork.getReturnByPath([this.cToken.address, this.smartToken.address, this.uToken.address],web3.utils.toWei("1"))
+    await this.bancorNetwork.getReturnByPath([this.smartToken.address, this.smartToken.address, this.uToken.address],web3.utils.toWei("1"))
+  })
 
   it('removing liquidity from pool', async () => {
     await this.bcConverter.liquidate(web3.utils.toWei('5'))
@@ -146,6 +156,7 @@ contract('BCConverter', (accounts) => {
     chai.expect(await this.uToken.balanceOf(accounts[0])).to.be.bignumber.equal(balance1)
     chai.expect(await this.bntToken.balanceOf(accounts[0])).to.be.bignumber.equal(balance2)
   })
+
 
   it('Convert from underlying token to BNT token should pass using BancorNetwork claimAndConvert2 function', async () => {
     

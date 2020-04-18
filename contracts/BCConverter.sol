@@ -4,8 +4,8 @@ pragma solidity ^0.4.26;
 import "../bancorContracts/solidity/contracts/token/interfaces/IERC20Token.sol";
 import "../bancorContracts/solidity/contracts/converter/BancorConverter.sol";
 
-import "./interfaces/ICToken.sol";
 
+import "./interfaces/ICToken.sol";
 
 contract BCConverter is BancorConverter {
 
@@ -268,7 +268,6 @@ contract BCConverter is BancorConverter {
             // dispatch price data update for the smart token/reserve
             emit PriceDataUpdate(reserveToken, supply + _amount, reserveBalance +reserveAmount, reserve.ratio);
         }
-
         // issue new funds to the caller in the smart token
         token.issue(msg.sender, _amount);
     }
@@ -550,5 +549,139 @@ contract BCConverter is BancorConverter {
 
         // execute the conversion and pass on the ETH with the call
         return bancorNetwork.convertFor2.value(msg.value)(_path, _amount, _minReturn, msg.sender, _affiliateAccount, _affiliateFee);
+    }
+
+    /**
+      * @dev calculates the expected return of converting a given amount of tokens
+      * 
+      * @param _fromToken  contract address of the token to convert from
+      * @param _toToken    contract address of the token to convert to
+      * @param _amount     amount of tokens received from the user
+      * 
+      * @return amount of tokens that the user will receive
+      * @return amount of tokens that the user will pay as fee
+    */
+    function getReturn(IERC20Token _fromToken, IERC20Token _toToken, uint256 _amount) public view returns (uint256, uint256) {
+        require(_fromToken != _toToken); // validate input
+
+        // conversion between the token and one of its reserves
+        if (_toToken == token)
+            return getPurchaseReturn(_fromToken, _amount);
+        else if (_fromToken == token)
+            return getSaleReturn(_toToken, _amount);
+
+        // conversion between 2 reserves
+        return getCrossReserveReturn(_fromToken, _toToken, _amount);
+    }
+
+    /**
+      * @dev converts a specific amount of _fromToken to _toToken
+      * note that prior to version 16, you should use 'convert' instead
+      * 
+      * @param _fromToken           ERC20 token to convert from
+      * @param _toToken             ERC20 token to convert to
+      * @param _amount              amount to convert, in fromToken
+      * @param _minReturn           if the conversion results in an amount smaller than the minimum return - it is cancelled, must be nonzero
+      * @param _affiliateAccount    affiliate account
+      * @param _affiliateFee        affiliate fee in PPM
+      * 
+      * @return conversion return amount
+    */
+    function convert2(IERC20Token _fromToken, IERC20Token _toToken, uint256 _amount, uint256 _minReturn, address _affiliateAccount, uint256 _affiliateFee) public returns (uint256) {
+        IERC20Token[] memory path = new IERC20Token[](3);
+        (path[0], path[1], path[2]) = (_fromToken, token, _toToken);
+        return quickConvert2(path, _amount, _minReturn, _affiliateAccount, _affiliateFee);
+    }
+
+     /**
+      * @dev deprecated, backward compatibility
+    */
+    function change(IERC20Token _fromToken, IERC20Token _toToken, uint256 _amount, uint256 _minReturn) public returns (uint256) {
+        return convertInternal(_fromToken, _toToken, _amount, _minReturn);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function convert(IERC20Token _fromToken, IERC20Token _toToken, uint256 _amount, uint256 _minReturn) public returns (uint256) {
+        return convert2(_fromToken, _toToken, _amount, _minReturn, address(0), 0);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function quickConvert(IERC20Token[] _path, uint256 _amount, uint256 _minReturn) public payable returns (uint256) {
+        return quickConvert2(_path, _amount, _minReturn, address(0), 0);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function quickConvertPrioritized2(IERC20Token[] _path, uint256 _amount, uint256 _minReturn, uint256[] memory, address _affiliateAccount, uint256 _affiliateFee) public payable returns (uint256) {
+        return quickConvert2(_path, _amount, _minReturn, _affiliateAccount, _affiliateFee);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function quickConvertPrioritized(IERC20Token[] _path, uint256 _amount, uint256 _minReturn, uint256, uint8, bytes32, bytes32) public payable returns (uint256) {
+        return quickConvert2(_path, _amount, _minReturn, address(0), 0);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function completeXConversion(IERC20Token[] _path, uint256 _minReturn, uint256 _conversionId, uint256, uint8, bytes32, bytes32) public returns (uint256) {
+        return completeXConversion2(_path, _minReturn, _conversionId);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function connectors(address _address) public view returns (uint256, uint32, bool, bool, bool) {
+        Reserve storage reserve = reserves[_address];
+        return(reserve.virtualBalance, reserve.ratio, reserve.isVirtualBalanceEnabled, reserve.isSaleEnabled, reserve.isSet);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function connectorTokens(uint256 _index) public view returns (IERC20Token) {
+        return BancorConverter.reserveTokens[_index];
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function connectorTokenCount() public view returns (uint16) {
+        return reserveTokenCount();
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function addConnector(IERC20Token _token, uint32 _weight, bool /*_enableVirtualBalance*/) public {
+        addReserve(_token, _weight);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function updateConnector(IERC20Token _connectorToken, uint32 /*_weight*/, bool /*_enableVirtualBalance*/, uint256 _virtualBalance) public {
+        updateReserveVirtualBalance(_connectorToken, _virtualBalance);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function getConnectorBalance(IERC20Token _connectorToken) public view returns (uint256) {
+        return getReserveBalance(_connectorToken);
+    }
+
+    /**
+      * @dev deprecated, backward compatibility
+    */
+    function getCrossConnectorReturn(IERC20Token _fromConnectorToken, IERC20Token _toConnectorToken, uint256 _amount) public view returns (uint256, uint256) {
+        return getCrossReserveReturn(_fromConnectorToken, _toConnectorToken, _amount);
     }
 }

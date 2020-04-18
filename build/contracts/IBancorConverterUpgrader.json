@@ -36,35 +36,35 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.4.26;\nimport './IBancorConverter.sol';\n\n/*\n    Bancor Converter Upgrader interface\n*/\ncontract IBancorConverterUpgrader {\n    function upgrade(bytes32 _version) public;\n    function upgrade(uint16 _version) public;\n}\n",
-  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
+  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
   "ast": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        2369
+        15552
       ]
     },
-    "id": 2370,
+    "id": 15553,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2357,
+        "id": 15540,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:5"
+        "src": "0:23:44"
       },
       {
-        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/converter/interfaces/IBancorConverter.sol",
+        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 2358,
+        "id": 15541,
         "nodeType": "ImportDirective",
-        "scope": 2370,
-        "sourceUnit": 2356,
-        "src": "24:32:5",
+        "scope": 15553,
+        "sourceUnit": 15251,
+        "src": "24:32:44",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -74,9 +74,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2369,
+        "id": 15552,
         "linearizedBaseContracts": [
-          2369
+          15552
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -84,7 +84,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2363,
+            "id": 15546,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -92,16 +92,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2361,
+              "id": 15544,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2360,
+                  "id": 15543,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2363,
-                  "src": "161:16:5",
+                  "scope": 15546,
+                  "src": "161:16:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -109,10 +109,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2359,
+                    "id": 15542,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "161:7:5",
+                    "src": "161:7:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -122,17 +122,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "160:18:5"
+              "src": "160:18:44"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2362,
+              "id": 15545,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "185:0:5"
+              "src": "185:0:44"
             },
-            "scope": 2369,
-            "src": "144:42:5",
+            "scope": 15552,
+            "src": "144:42:44",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -140,7 +140,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2368,
+            "id": 15551,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -148,16 +148,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2366,
+              "id": 15549,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2365,
+                  "id": 15548,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2368,
-                  "src": "208:15:5",
+                  "scope": 15551,
+                  "src": "208:15:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -165,10 +165,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 2364,
+                    "id": 15547,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "208:6:5",
+                    "src": "208:6:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -178,56 +178,56 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "207:17:5"
+              "src": "207:17:44"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2367,
+              "id": 15550,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "231:0:5"
+              "src": "231:0:44"
             },
-            "scope": 2369,
-            "src": "191:41:5",
+            "scope": 15552,
+            "src": "191:41:44",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2370,
-        "src": "104:130:5"
+        "scope": 15553,
+        "src": "104:130:44"
       }
     ],
-    "src": "0:235:5"
+    "src": "0:235:44"
   },
   "legacyAST": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        2369
+        15552
       ]
     },
-    "id": 2370,
+    "id": 15553,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2357,
+        "id": 15540,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:5"
+        "src": "0:23:44"
       },
       {
-        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/converter/interfaces/IBancorConverter.sol",
+        "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 2358,
+        "id": 15541,
         "nodeType": "ImportDirective",
-        "scope": 2370,
-        "sourceUnit": 2356,
-        "src": "24:32:5",
+        "scope": 15553,
+        "sourceUnit": 15251,
+        "src": "24:32:44",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -237,9 +237,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2369,
+        "id": 15552,
         "linearizedBaseContracts": [
-          2369
+          15552
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -247,7 +247,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2363,
+            "id": 15546,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -255,16 +255,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2361,
+              "id": 15544,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2360,
+                  "id": 15543,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2363,
-                  "src": "161:16:5",
+                  "scope": 15546,
+                  "src": "161:16:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -272,10 +272,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2359,
+                    "id": 15542,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "161:7:5",
+                    "src": "161:7:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -285,17 +285,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "160:18:5"
+              "src": "160:18:44"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2362,
+              "id": 15545,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "185:0:5"
+              "src": "185:0:44"
             },
-            "scope": 2369,
-            "src": "144:42:5",
+            "scope": 15552,
+            "src": "144:42:44",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -303,7 +303,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2368,
+            "id": 15551,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -311,16 +311,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2366,
+              "id": 15549,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2365,
+                  "id": 15548,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2368,
-                  "src": "208:15:5",
+                  "scope": 15551,
+                  "src": "208:15:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -328,10 +328,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 2364,
+                    "id": 15547,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "208:6:5",
+                    "src": "208:6:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -341,35 +341,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "207:17:5"
+              "src": "207:17:44"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2367,
+              "id": 15550,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "231:0:5"
+              "src": "231:0:44"
             },
-            "scope": 2369,
-            "src": "191:41:5",
+            "scope": 15552,
+            "src": "191:41:44",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 2370,
-        "src": "104:130:5"
+        "scope": 15553,
+        "src": "104:130:44"
       }
     ],
-    "src": "0:235:5"
+    "src": "0:235:44"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.22",
-  "updatedAt": "2020-04-03T06:31:37.670Z",
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-04-17T21:34:25.344Z",
   "devdoc": {
     "methods": {}
   },

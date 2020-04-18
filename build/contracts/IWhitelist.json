@@ -27,26 +27,26 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.4.26;\n\n/*\n    Whitelist interface\n*/\ncontract IWhitelist {\n    function isWhitelisted(address _address) public view returns (bool);\n}\n",
-  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/interfaces/IWhitelist.sol",
+  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/utility/interfaces/IWhitelist.sol",
   "ast": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/interfaces/IWhitelist.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/utility/interfaces/IWhitelist.sol",
     "exportedSymbols": {
       "IWhitelist": [
-        3638
+        19246
       ]
     },
-    "id": 3639,
+    "id": 19247,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3630,
+        "id": 19238,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:23"
+        "src": "0:23:79"
       },
       {
         "baseContracts": [],
@@ -54,9 +54,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3638,
+        "id": 19246,
         "linearizedBaseContracts": [
-          3638
+          19246
         ],
         "name": "IWhitelist",
         "nodeType": "ContractDefinition",
@@ -64,7 +64,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3637,
+            "id": 19245,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -72,16 +72,16 @@
             "name": "isWhitelisted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3633,
+              "id": 19241,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3632,
+                  "id": 19240,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3637,
-                  "src": "104:16:23",
+                  "scope": 19245,
+                  "src": "104:16:79",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -89,10 +89,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3631,
+                    "id": 19239,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "104:7:23",
+                    "src": "104:7:79",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -102,20 +102,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "103:18:23"
+              "src": "103:18:79"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3636,
+              "id": 19244,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3635,
+                  "id": 19243,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3637,
-                  "src": "143:4:23",
+                  "scope": 19245,
+                  "src": "143:4:79",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -123,10 +123,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3634,
+                    "id": 19242,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:4:23",
+                    "src": "143:4:79",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -136,40 +136,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "142:6:23"
+              "src": "142:6:79"
             },
-            "scope": 3638,
-            "src": "81:68:23",
+            "scope": 19246,
+            "src": "81:68:79",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3639,
-        "src": "55:96:23"
+        "scope": 19247,
+        "src": "55:96:79"
       }
     ],
-    "src": "0:152:23"
+    "src": "0:152:79"
   },
   "legacyAST": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/utility/interfaces/IWhitelist.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/utility/interfaces/IWhitelist.sol",
     "exportedSymbols": {
       "IWhitelist": [
-        3638
+        19246
       ]
     },
-    "id": 3639,
+    "id": 19247,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3630,
+        "id": 19238,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:23"
+        "src": "0:23:79"
       },
       {
         "baseContracts": [],
@@ -177,9 +177,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3638,
+        "id": 19246,
         "linearizedBaseContracts": [
-          3638
+          19246
         ],
         "name": "IWhitelist",
         "nodeType": "ContractDefinition",
@@ -187,7 +187,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3637,
+            "id": 19245,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -195,16 +195,16 @@
             "name": "isWhitelisted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3633,
+              "id": 19241,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3632,
+                  "id": 19240,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3637,
-                  "src": "104:16:23",
+                  "scope": 19245,
+                  "src": "104:16:79",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -212,10 +212,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3631,
+                    "id": 19239,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "104:7:23",
+                    "src": "104:7:79",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -225,20 +225,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "103:18:23"
+              "src": "103:18:79"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3636,
+              "id": 19244,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3635,
+                  "id": 19243,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3637,
-                  "src": "143:4:23",
+                  "scope": 19245,
+                  "src": "143:4:79",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -246,10 +246,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3634,
+                    "id": 19242,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:4:23",
+                    "src": "143:4:79",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -259,28 +259,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "142:6:23"
+              "src": "142:6:79"
             },
-            "scope": 3638,
-            "src": "81:68:23",
+            "scope": 19246,
+            "src": "81:68:79",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3639,
-        "src": "55:96:23"
+        "scope": 19247,
+        "src": "55:96:79"
       }
     ],
-    "src": "0:152:23"
+    "src": "0:152:79"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.22",
-  "updatedAt": "2020-04-03T06:31:37.683Z",
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-04-17T21:34:25.448Z",
   "devdoc": {
     "methods": {}
   },

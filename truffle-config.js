@@ -3,7 +3,7 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 if(process.argv.indexOf('--network')!=-1) {
   providedNetwork = process.argv[process.argv.indexOf('--network')+1]
-  if(providedNetwork==="external" ) {
+  if(providedNetwork==="external") {
     if( process.argv.indexOf('--privateKey')==-1 || 
         process.argv.indexOf('--httpProvider')==-1 ) {
         throw (Error("A mandatory argument is missing, please check project README for details"));
@@ -18,6 +18,7 @@ options = {
     external: {
       skipDryRun: true,
       provider: () => new HDWalletProvider(privateKey, httpProviderAddress, 0, 1),
+      gasPrice: 20000000000,
       network_id: "*", // match any network
       networkCheckTimeout: 200000,
     },
@@ -37,7 +38,8 @@ options = {
         optimizer: {
           enabled: true,
           runs: 2000
-        }
+        },
+        evmVersion: "byzantium"
       }
     }
   }

@@ -1,3 +1,4 @@
+
 const BCConverter = artifacts.require("BCConverter")
 const SmartToken = artifacts.require("SmartToken")
 const ContractRegistry = artifacts.require("IContractRegistry")
@@ -8,7 +9,6 @@ const ICToken = artifacts.require("ICToken")
 
 module.exports = async function(deployer, network, accounts) {
 	if(network === "external") {
-
     if( process.argv.indexOf('--bancorContractRegistry')==-1 || 
       process.argv.indexOf('--uToken')==-1 ||
       process.argv.indexOf('--cToken')==-1 ||
@@ -112,11 +112,11 @@ module.exports = async function(deployer, network, accounts) {
 
   		promisesArray = []
   		promisesArray.push(smartToken.issue(accounts[0],(initialSmarTokenBalance)))
-  		promisesArray.push(bcConverter.setConversionFee(conversionFee))
+  		promisesArray.push(bcConverter.setConversionFee(0))
   		await Promise.all(promisesArray)
 
   		promisesArray = []
-  		promisesArray.push(bcConverter.acceptTokenOwnership(),{gasPrice:5000000000})
+  		promisesArray.push(bcConverter.acceptTokenOwnership())
 
   		await Promise.all(promisesArray)
 

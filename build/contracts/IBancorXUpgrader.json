@@ -26,26 +26,26 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.4.26;\n\n/*\n    Bancor X Upgrader interface\n*/\ncontract IBancorXUpgrader {\n    function upgrade(uint16 _version, address[] _reporters) public;\n}\n",
-  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
+  "sourcePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
   "ast": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
     "exportedSymbols": {
       "IBancorXUpgrader": [
-        3177
+        8275
       ]
     },
-    "id": 3178,
+    "id": 8276,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3168,
+        "id": 8266,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:7"
+        "src": "0:23:33"
       },
       {
         "baseContracts": [],
@@ -53,9 +53,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3177,
+        "id": 8275,
         "linearizedBaseContracts": [
-          3177
+          8275
         ],
         "name": "IBancorXUpgrader",
         "nodeType": "ContractDefinition",
@@ -63,7 +63,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3176,
+            "id": 8274,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -71,16 +71,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3174,
+              "id": 8272,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3170,
+                  "id": 8268,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3176,
-                  "src": "112:15:7",
+                  "scope": 8274,
+                  "src": "112:15:33",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -88,10 +88,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 3169,
+                    "id": 8267,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "112:6:7",
+                    "src": "112:6:33",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -102,11 +102,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3173,
+                  "id": 8271,
                   "name": "_reporters",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3176,
-                  "src": "129:20:7",
+                  "scope": 8274,
+                  "src": "129:20:33",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -115,19 +115,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3171,
+                      "id": 8269,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "129:7:7",
+                      "src": "129:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 3172,
+                    "id": 8270,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "129:9:7",
+                    "src": "129:9:33",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -137,47 +137,47 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:39:7"
+              "src": "111:39:33"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3175,
+              "id": 8273,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "157:0:7"
+              "src": "157:0:33"
             },
-            "scope": 3177,
-            "src": "95:63:7",
+            "scope": 8275,
+            "src": "95:63:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3178,
-        "src": "63:97:7"
+        "scope": 8276,
+        "src": "63:97:33"
       }
     ],
-    "src": "0:161:7"
+    "src": "0:161:33"
   },
   "legacyAST": {
-    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/bancorContracts/solidity/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
+    "absolutePath": "/home/faycal/Desktop/projects/BancorCompoundPool/contracts/contracts/bancorx/interfaces/IBancorXUpgrader.sol",
     "exportedSymbols": {
       "IBancorXUpgrader": [
-        3177
+        8275
       ]
     },
-    "id": 3178,
+    "id": 8276,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3168,
+        "id": 8266,
         "literals": [
           "solidity",
           "0.4",
           ".26"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:7"
+        "src": "0:23:33"
       },
       {
         "baseContracts": [],
@@ -185,9 +185,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3177,
+        "id": 8275,
         "linearizedBaseContracts": [
-          3177
+          8275
         ],
         "name": "IBancorXUpgrader",
         "nodeType": "ContractDefinition",
@@ -195,7 +195,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3176,
+            "id": 8274,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -203,16 +203,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3174,
+              "id": 8272,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3170,
+                  "id": 8268,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3176,
-                  "src": "112:15:7",
+                  "scope": 8274,
+                  "src": "112:15:33",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -220,10 +220,10 @@
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 3169,
+                    "id": 8267,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "112:6:7",
+                    "src": "112:6:33",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -234,11 +234,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3173,
+                  "id": 8271,
                   "name": "_reporters",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3176,
-                  "src": "129:20:7",
+                  "scope": 8274,
+                  "src": "129:20:33",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -247,19 +247,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 3171,
+                      "id": 8269,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "129:7:7",
+                      "src": "129:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 3172,
+                    "id": 8270,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "129:9:7",
+                    "src": "129:9:33",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -269,35 +269,35 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:39:7"
+              "src": "111:39:33"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3175,
+              "id": 8273,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "157:0:7"
+              "src": "157:0:33"
             },
-            "scope": 3177,
-            "src": "95:63:7",
+            "scope": 8275,
+            "src": "95:63:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3178,
-        "src": "63:97:7"
+        "scope": 8276,
+        "src": "63:97:33"
       }
     ],
-    "src": "0:161:7"
+    "src": "0:161:33"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.22",
-  "updatedAt": "2020-04-03T06:39:09.798Z",
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-04-17T21:34:25.167Z",
   "devdoc": {
     "methods": {}
   },

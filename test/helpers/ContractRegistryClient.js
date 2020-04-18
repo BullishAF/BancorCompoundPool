@@ -1,3 +1,5 @@
+const web3 = require("web3");
+
 module.exports.CONTRACT_FEATURES              = web3.utils.fromAscii("ContractFeatures");
 module.exports.CONTRACT_REGISTRY              = web3.utils.fromAscii("ContractRegistry");
 module.exports.BANCOR_NETWORK                 = web3.utils.fromAscii("BancorNetwork");
