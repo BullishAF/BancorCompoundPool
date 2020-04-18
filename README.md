@@ -72,8 +72,9 @@ truffle migrate --reset --network external  \
 
 A test example was deployed in Ropsten network under the following addresses:
 
-* Converter address: [0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314](https://ropsten.etherscan.io/address/0x5C7fF8e8866C4Cff86c8A2b0D40c5A49259Ca314)
-* Smart Token address: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
+* Contract registry: [0x2A545c759EB23eA13A1b3354EB76e76cD51ABC72](https://ropsten.etherscan.io/address/0x2A545c759EB23eA13A1b3354EB76e76cD51ABC72)
+* Converter address: [0xFD7b87dCBa411c27417957Aa384F4797abe71ee6](https://ropsten.etherscan.io/address/0xFD7b87dCBa411c27417957Aa384F4797abe71ee6)
+* Smart Token address: [0x65220818111aA20fA2b4B57713dbB549177D2202](https://ropsten.etherscan.io/address/0x65220818111aA20fA2b4B57713dbB549177D2202)
 
 For this example DAI/cDAI was selected, but any onther token can be deployed using the steps described above.
 
@@ -97,7 +98,7 @@ For this example DAI/cDAI was selected, but any onther token can be deployed usi
 
 #### Token addresses (ropsten network):
 
-- Smart Token: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3)
+- Smart Token: [0xe577C01B95B74deDf20a1E5F53Cf8F78b9EbCAF3](https://ropsten.etherscan.io/address/0x65220818111aA20fA2b4B57713dbB549177D2202)
 - cDai: [0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF](https://ropsten.etherscan.io/address/0x6CE27497A64fFFb5517AA4aeE908b1E7EB63B9fF)
 - DAI: [0xB5E5D0F8C0cbA267CD3D7035d6AdC8eBA7Df7Cdd](https://ropsten.etherscan.io/address/0xB5E5D0F8C0cbA267CD3D7035d6AdC8eBA7Df7Cdd)
 - BNT: [0x62bd9D98d4E188e281D7B78e29334969bbE1053c](https://ropsten.etherscan.io/address/0x62bd9D98d4E188e281D7B78e29334969bbE1053c)
