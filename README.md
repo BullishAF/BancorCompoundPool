@@ -68,6 +68,21 @@ truffle migrate --reset --network external  \
 --privateKey "Set the private key to the account holding the necessary balances" \
 --httpProvider "https://cloudflare-eth.com"
 ```
+
+### Web Server
+
+To run the web server locally follow the instructions below:
+
+```console
+npm start
+```
+
+To generate deployment file, run:
+
+```console
+npm run build:prod
+```
+
 ## Example 
 
 A test example was deployed in Ropsten network under the following addresses:
