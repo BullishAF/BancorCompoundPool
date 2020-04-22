@@ -16,6 +16,20 @@ class MAlert extends React.Component {
   render() {
     return (
       <div className="container">
+      	<div>
+		{ this.props.investReducer.alertMessage.length>0  &&(
+		  <div className="alert alert-info" role="alert">
+		    {this.props.investReducer.alertMessage}
+		  </div>
+		)}
+		</div>
+		<div>
+		{this.props.convertReducer.alertMessage.length>0  &&(
+		  <div className="alert alert-info" role="alert">
+		    {this.props.convertReducer.alertMessage}
+		  </div>
+		)}
+		</div>
         <div>
 		{this.props.walletReducer.installWallet &&(
 		  <div className="alert alert-warning" role="alert">

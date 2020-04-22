@@ -4,7 +4,8 @@ import {
   INVEST_UPDATE_OUTPUTS,
   INVEST_DISABLE,
   INVEST_ENABLE,
-  INVEST_APPROVE_OR_REJECT} from "./action-types.jsx";
+  INVEST_APPROVE_OR_REJECT,
+  INVEST_UPDATE_ALERT_MESSAGE} from "./action-types.jsx";
 
 function investUpdatePool(payload = 0) {
   return {
@@ -48,6 +49,13 @@ function investApproveOrReject(payload = 0){
   } 
 }
 
+function investUpdateAlertMessage(payload = 0){
+  return { 
+    type: INVEST_UPDATE_ALERT_MESSAGE,
+    payload: payload
+  } 
+}
+
 export {
   investApproveOrReject,
   investUpdateOutputs,
@@ -55,4 +63,5 @@ export {
   investUpdateInput,
   investEnable,
   investDisable,
+  investUpdateAlertMessage,
 }

@@ -17,7 +17,8 @@ import {
   convertUpdateToToken,  
   convertEnable,
   convertDisable,
-  convertApproveOrReject
+  convertApproveOrReject,
+  convertUpdateAlertMessage
 } from "../actions/convertActions.jsx";
 
 import {  
@@ -126,8 +127,8 @@ class MConvert extends React.Component {
     }
 
     let smartTokenAddr = tokens['CDAIBNT']
-    let fromTokenAddr = tokens[this.props.convertReducer.fromToken];
-    let toTokenAddr = tokens[this.props.convertReducer.toToken];
+    let fromTokenAddr = this.props.convertReducer.fromTokenAddress;
+    let toTokenAddr = this.props.convertReducer.toTokenAddress;
     let inputVal = this.props.convertReducer.inputVal;
 
     isBalanceEnough(fromTokenAddr,inputVal).then( result => {
@@ -137,12 +138,13 @@ class MConvert extends React.Component {
         this.eventTarget.elements[CONVERT_UPDATE_INPUT].setCustomValidity("");
         this.props.convertEnable();
       } else {
-      let tx = convert([fromTokenAddr,smartTokenAddr,toTokenAddr],inputVal)
+      let tx = convert([fromTokenAddr,smartTokenAddr,toTokenAddr],inputVal,this.props)
       this.props.convertApproveOrReject(true);
       tx.then(
           () => {
             this.props.convertEnable();
             this.props.convertApproveOrReject(false);
+            this.props.convertUpdateAlertMessage("");
             this.setOutputValue(
               getPath(
                 this.props.convertReducer.fromToken,
@@ -153,6 +155,7 @@ class MConvert extends React.Component {
           },  
           error => {
             this.props.convertEnable();
+            this.props.convertUpdateAlertMessage("");
             this.props.convertApproveOrReject(false);
           }
         )
@@ -241,7 +244,7 @@ const mapDispatchToProps = (dispatch) => {
     convertApproveOrReject: (payload) => { dispatch(convertApproveOrReject(payload))},
     convertDisable: () => { dispatch(convertDisable())},
     convertEnable: () => { dispatch(convertEnable())},
-
+    convertUpdateAlertMessage: (payload) => { dispatch(convertUpdateAlertMessage(payload))}
   }
 }
 

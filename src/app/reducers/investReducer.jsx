@@ -6,6 +6,7 @@ import {
   INVEST_DISABLE,
   INVEST_ENABLE,
   INVEST_APPROVE_OR_REJECT, 
+  INVEST_UPDATE_ALERT_MESSAGE,
 } from "../actions/action-types.jsx";
 
 const initPoolAddress = [
@@ -29,6 +30,7 @@ const initialState = {
   token2: smToTokens[initPool][1],
   token1Address: tokens[smToTokens[initPool][0]],
   token2Address: tokens[smToTokens[initPool][1]],
+  alertMessage: "",
   token1Output: "0.0",
   token2Output: "0.0",
   inputVal: "0.0",
@@ -75,6 +77,11 @@ function investReducer(state = initialState, action) {
     case INVEST_APPROVE_OR_REJECT: {
       return Object.assign({}, state, {
           approveOrReject: action.payload,
+      })
+    }
+    case INVEST_UPDATE_ALERT_MESSAGE: {
+      return Object.assign({}, state, {
+          alertMessage: action.payload,
       })
     }
     default:

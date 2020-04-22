@@ -66,7 +66,7 @@ async function getBalanceOfTokenAndDecimals(tokenAddress) {
   return results;
 }
 
-async function convert(path, amount) {
+async function convert(path, amount,props) {
   let web3 = window.web3;
   let senderAddress = web3.currentProvider.selectedAddress;
 
@@ -82,11 +82,25 @@ async function convert(path, amount) {
   let allowance = await erc20from.methods.allowance(senderAddress,bancorNetworkAddress).call();
 
   if(amount - allowance > 0) {
-    if(allowance > 0) erc20from.methods.approve(bancorNetworkAddress,0).send({from:senderAddress,gasPrice:40000000000})
-    erc20from.methods.approve(bancorNetworkAddress,MAX_UINT).send({from:senderAddress,gasPrice:40000000000})
+    if(allowance > 0) try {
+      props.convertUpdateAlertMessage("The approved allowance of "+ props.convertReducer.fromToken + " is not enough, it has to be set to zero first.")
+      await erc20from.methods.approve(bancorNetworkAddress,0).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.convertUpdateAlertMessage("");
+      return 0;
+    }
+    try {
+      props.convertUpdateAlertMessage("Please approve the necessary allowance to be spent for "+ props.convertReducer.fromToken + " token.")
+      await erc20from.methods.approve(bancorNetworkAddress,MAX_UINT).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.convertUpdateAlertMessage("");
+      return 0;
+    }
   }
+  props.convertUpdateAlertMessage("Please confirm the convert transaction");
   let bancorNetwork = new web3.eth.Contract(BancorNetwork.abi, bancorNetworkAddress);
   let output = await bancorNetwork.methods.claimAndConvert2(path, amount, 1, ZERO_ADDRESS, 0).send({from: senderAddress,gasPrice:20000000000})
+  props.convertUpdateAlertMessage("");
   return true;
 }   
 
@@ -122,7 +136,13 @@ async function getInvestOutputs(sm,amount,token1,token2) {
   return [fromDecimals(reserveAmount1,decimals1),fromDecimals(reserveAmount2,decimals2)]
 }
 
-async function invest(sm,amount,token1,token2) {
+async function invest(props) {
+
+  let sm = props.investReducer.poolAddress;
+  let amount = props.investReducer.inputVal;
+  let token1 = props.investReducer.token1Address;
+  let token2 = props.investReducer.token2Address;
+
 
   let web3 = window.web3;
   let senderAddress = web3.currentProvider.selectedAddress;
@@ -146,16 +166,44 @@ async function invest(sm,amount,token1,token2) {
   let allowance1 = await erc201.methods.allowance(senderAddress,converterAddress).call();
   let allowance2 = await erc202.methods.allowance(senderAddress,converterAddress).call();
 
+
   if(reserveAmount1 - allowance1 > 0) {
-    if(allowance1 > 0) erc201.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:40000000000})
-    erc201.methods.approve(converterAddress,reserveAmount1).send({from:senderAddress,gasPrice:40000000000})
-  }
-  if(reserveAmount2 - allowance2 > 0) {
-    if(allowance2 > 0) erc202.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:40000000000})
-    erc202.methods.approve(converterAddress,reserveAmount2).send({from:senderAddress,gasPrice:40000000000})
+    if(allowance1 > 0) try {
+      props.investUpdateAlertMessage("The approved allowance of "+ props.investReducer.token1 + " is not enough, it has to be set to zero first.")
+      await erc201.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.investUpdateAlertMessage("")
+      return 0;
+    }
+    try {
+      props.investUpdateAlertMessage("Please approve the necessary allowance to be spent for "+ props.investReducer.token1 + " token.")
+      await erc201.methods.approve(converterAddress,reserveAmount1).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.investUpdateAlertMessage("")
+      return 0;
+    }
   }
 
-  await converter.methods.fund(smAmount).send({from:senderAddress,gasPrice:40000000000});
+
+  if(reserveAmount2 - allowance2 > 0) {
+     if(allowance2 > 0) try {
+      props.investUpdateAlertMessage("The approved allowance of "+ props.investReducer.token2 + " is not enough, it has to be set to zero first.")
+      await erc202.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.investUpdateAlertMessage("")
+      return 0;
+    }
+    try {
+      props.investUpdateAlertMessage("Please approve the necessary allowance to be spent for "+ props.investReducer.token2 + " token.")
+      await erc202.methods.approve(converterAddress,reserveAmount2).send({from:senderAddress,gasPrice:20000000000})
+    } catch {
+      props.investUpdateAlertMessage("")
+      return 0;
+    }
+  }
+  props.investUpdateAlertMessage("Please confirm the invest transaction")
+  await converter.methods.fund(smAmount).send({from:senderAddress,gasPrice:20000000000});
+  props.investUpdateAlertMessage("")
   return true;
 }
 
@@ -188,7 +236,7 @@ async function liquidate(sm,amount) {
   let smAmount = toDecimals(amount,decimalsSm);
   let converterAddress = await erc20sm.methods.owner().call();
   let converter = new web3.eth.Contract(BCConverter.abi, converterAddress);
-  await converter.methods.liquidate(smAmount).send({from:senderAddress,gasPrice:40000000000});
+  await converter.methods.liquidate(smAmount).send({from:senderAddress,gasPrice:20000000000});
   return true;
 }
 

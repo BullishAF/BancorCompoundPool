@@ -6,7 +6,8 @@ import {
   CONVERT_UPDATE_TO_TOKEN,
   CONVERT_DISABLE,
   CONVERT_ENABLE,
-  CONVERT_APPROVE_OR_REJECT} from "./action-types.jsx";
+  CONVERT_APPROVE_OR_REJECT,
+  CONVERT_UPDATE_ALERT_MESSAGE} from "./action-types.jsx";
 
 
 function convertUpdateOutput(payload = 0) {
@@ -58,6 +59,15 @@ function convertApproveOrReject(payload = 0){
   } 
 }
 
+
+function convertUpdateAlertMessage(payload = 0){
+  return { 
+    type: CONVERT_UPDATE_ALERT_MESSAGE,
+    payload: payload
+  } 
+}
+
+
 export {
   convertApproveOrReject,
   convertUpdateOutput,
@@ -65,5 +75,6 @@ export {
   convertUpdateFromToken,
   convertUpdateToToken,
   convertEnable,
-  convertDisable
+  convertDisable,
+  convertUpdateAlertMessage,
 }

@@ -11,6 +11,7 @@ import {
   investEnable,
   investDisable,
   investApproveOrReject,
+  investUpdateAlertMessage,
 } from "../actions/investActions.jsx";
 
 import { 
@@ -90,20 +91,19 @@ class MInvest extends React.Component {
           this.eventTarget.elements["expectedVal2"].setCustomValidity("")
         }
         else {
-          let tx = invest(this.props.investReducer.poolAddress,
-                          this.props.investReducer.inputVal,
-                          this.props.investReducer.token1Address,
-                          this.props.investReducer.token2Address)
+          let tx = invest(this.props)
           this.props.investApproveOrReject(true)
           tx.then(
             () => {
               this.props.investEnable();
               this.props.investApproveOrReject(false);
+              this.props.investUpdateAlertMessage("");
               this.setOutputValue(this.props.investReducer.inputVal);
             }
             ,
             error => {
               this.props.investApproveOrReject(false);
+              this.props.investUpdateAlertMessage("");
               this.props.investEnable();
             }
           )
@@ -192,6 +192,7 @@ const mapDispatchToProps = (dispatch) => {
     investDisable: () => {dispatch(investDisable())},
     investEnable: () => {dispatch(investEnable())},
     investApproveOrReject: (payload)=> {dispatch(investApproveOrReject(payload))},
+    investUpdateAlertMessage: (payload)=> {dispatch(investUpdateAlertMessage(payload))},
   }
 }
 
