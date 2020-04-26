@@ -22,7 +22,7 @@ const tokens = {
   BNT: "0x62bd9D98d4E188e281D7B78e29334969bbE1053c",
 }
 
-const initPool = 2;
+const initPool = 1;
 const initialState = {
   pool: initPool,
   poolAddress: initPoolAddress[initPool-1],
