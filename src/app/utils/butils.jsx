@@ -177,7 +177,7 @@ async function invest(props) {
     }
     try {
       props.investUpdateAlertMessage("Please approve the necessary allowance to be spent for "+ props.investReducer.token1 + " token.")
-      await erc201.methods.approve(converterAddress,reserveAmount1).send({from:senderAddress,gasPrice:20000000000})
+      await erc201.methods.approve(converterAddress,MAX_UINT).send({from:senderAddress,gasPrice:20000000000})
     } catch {
       props.investUpdateAlertMessage("")
       return 0;
@@ -195,7 +195,7 @@ async function invest(props) {
     }
     try {
       props.investUpdateAlertMessage("Please approve the necessary allowance to be spent for "+ props.investReducer.token2 + " token.")
-      await erc202.methods.approve(converterAddress,reserveAmount2).send({from:senderAddress,gasPrice:20000000000})
+      await erc202.methods.approve(converterAddress,MAX_UINT).send({from:senderAddress,gasPrice:20000000000})
     } catch {
       props.investUpdateAlertMessage("")
       return 0;

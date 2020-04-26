@@ -3,12 +3,12 @@ import BigNumber from "bignumber.js";
 const zeroAddress = "0x0000000000000000000000000000000000000000";
 
 const fromDecimals = (amount, decimals) => {
-  return new BigNumber(amount).dividedBy(10 ** Number(decimals)).toString(10);
+  return new BigNumber(amount).dividedBy(BigNumber(10).pow(Number(decimals))).toString(10);
 };
 
 const toDecimals = (amount, decimals) => {
   return new BigNumber(amount)
-    .multipliedBy(10 ** Number(decimals))
+    .multipliedBy(BigNumber(10).pow(Number(decimals)))
     .toString(10);
 };
 
