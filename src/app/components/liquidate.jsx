@@ -47,6 +47,12 @@ class MLiquidate extends React.Component {
       },
     }
   }
+
+  componentDidUpdate(prevProps) {
+    if(!(this.props.liquidateReducer.pool == prevProps.liquidateReducer.pool)) {
+      this.setOutputValue(this.props.liquidateReducer.inputVal)
+    }
+  }
   
   handleChange(event) {
     if(this.eventToAction[event.target.name])

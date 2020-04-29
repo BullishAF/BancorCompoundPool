@@ -30,7 +30,9 @@ var requestCounter = 0;
 class MInvest extends React.Component {
 
   constructor(props) {
+
     super(props);
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setOutputValue = this.setOutputValue.bind(this);
@@ -45,6 +47,12 @@ class MInvest extends React.Component {
         if(isEmpty(value)) return;
         this.setOutputValue(value)
       },
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(!(this.props.investReducer.pool == prevProps.investReducer.pool)) {
+      this.setOutputValue(this.props.investReducer.inputVal)
     }
   }
   
