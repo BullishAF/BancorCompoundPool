@@ -11,6 +11,7 @@ import {
   liquidateEnable,
   liquidateDisable,
   liquidateApproveOrReject,
+  liquidateMaxValue,
 } from "../actions/liquidateActions.jsx";
 
 import { 
@@ -23,9 +24,11 @@ import {
   isBalanceEnough,
   getLiquidateOutputs,
   isEmpty,
+  getBalanceOf
 } from "../utils/butils.jsx"
 
 var requestCounter = 0;
+var requestCounterMAx = 0;
 
 class MLiquidate extends React.Component {
 
@@ -34,6 +37,7 @@ class MLiquidate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setOutputValue = this.setOutputValue.bind(this);
+    this.getMaxValue = this.getMaxValue.bind(this);
 
     this.eventToAction = {
       LIQUIDATE_UPDATE_POOL:(value) => {
@@ -50,10 +54,23 @@ class MLiquidate extends React.Component {
 
   componentDidUpdate(prevProps) {
     if(!(this.props.liquidateReducer.pool == prevProps.liquidateReducer.pool)) {
-      this.setOutputValue(this.props.liquidateReducer.inputVal)
+      this.setOutputValue(this.props.liquidateReducer.inputVal);
     }
+    this.getMaxValue();
   }
-  
+
+  getMaxValue() {
+    var _requestCounter = ++requestCounterMAx
+    getBalanceOf(this.props.liquidateReducer.poolAddress)
+    .then(
+      output => {
+          if(!(this.props.liquidateReducer.maxValue == output)) this.props.liquidateMaxValue([output,_requestCounter])
+      }
+    ,
+      () => {}
+    )
+  }
+
   handleChange(event) {
     if(this.eventToAction[event.target.name])
       this.eventToAction[event.target.name](event.target.value)
@@ -61,6 +78,7 @@ class MLiquidate extends React.Component {
 
   setOutputValue(value) {
     var _requestCounter = ++requestCounter
+    console.log("test")
     getLiquidateOutputs(
       this.props.liquidateReducer.poolAddress,
       value,
@@ -141,8 +159,8 @@ class MLiquidate extends React.Component {
                   <input type="number" min="0" step="any" id="inputValue" 
                   name ={LIQUIDATE_UPDATE_INPUT} 
                   onChange={this.handleChange} 
-                  value={this.props.liquidateReducer.inputVal} className="form-control" placeholder="SmartToken amount to be burned" required autoFocus/>
-                  <label htmlFor="inputValue" className="text-secondary">SmartToken amount to be burned</label>
+                  value={this.props.liquidateReducer.inputVal} className="form-control" placeholder={"Amount to be burned. The maximum is: " + this.props.liquidateReducer.maxValue } required autoFocus/>
+                  <label htmlFor="inputValue" className="text-secondary">{"Amount to be burned. The maximum is: " + this.props.liquidateReducer.maxValue }</label>
                 </div>
                 <div className="form-group">
                   <div className="input-group">
@@ -166,7 +184,7 @@ class MLiquidate extends React.Component {
                     className="form-control" placeholder=""  />
                   </div>
                 </div>
-                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.liquidateReducer.isDisabled} type="submit"  >LIQUIDATE</button>
+                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.liquidateReducer.isDisabled} type="submit"  ><i className="fas fa-fire-alt"></i> LIQUIDATE</button>
                 <hr className="my-4" />
                 <Alert/>
               </form>
@@ -194,6 +212,7 @@ const mapDispatchToProps = (dispatch) => {
     liquidateDisable: () => {dispatch(liquidateDisable())},
     liquidateEnable: () => {dispatch(liquidateEnable())},
     liquidateApproveOrReject: (payload)=> {dispatch(liquidateApproveOrReject(payload))},
+    liquidateMaxValue: (payload)=> {dispatch(liquidateMaxValue(payload))}
   }
 }
 

@@ -18,7 +18,8 @@ import {
   convertEnable,
   convertDisable,
   convertApproveOrReject,
-  convertUpdateAlertMessage
+  convertUpdateAlertMessage,
+  convertMaxValue
 } from "../actions/convertActions.jsx";
 
 import {  
@@ -32,6 +33,7 @@ import {
   isBalanceEnough,
   getReturn,
   isEmpty,
+  getBalanceOf,
 } from "../utils/butils.jsx";
 
 const tokens = {
@@ -42,6 +44,7 @@ const tokens = {
 }
 
 var requestCounter = 0;
+var requestCounterMax = 0;
 
 class MConvert extends React.Component {
 
@@ -51,6 +54,8 @@ class MConvert extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.setOutputValue = this.setOutputValue.bind(this);
     this.getPath = this.getPath.bind(this);
+    this.getMaxValue = this.getMaxValue.bind(this);
+    this.switch = this.switch.bind(this);
 
     this.eventToAction = {
       CONVERT_UPDATE_OUTPUT: (value) => {
@@ -98,6 +103,30 @@ class MConvert extends React.Component {
     ];
   }
 
+  componentDidUpdate(prevProps) {
+    this.getMaxValue()
+  }
+
+  getMaxValue() {
+    var _requestCounter = ++requestCounterMax
+    getBalanceOf(this.props.convertReducer.fromTokenAddress)
+    .then(
+      output => {
+         if(!(this.props.convertReducer.maxValue == output)) this.props.convertMaxValue([output,_requestCounter])
+      }
+    ,
+      () => {}
+    )
+  }
+
+  switch() {
+    this.props.convertUpdateFromToken(this.props.convertReducer.toToken),
+    this.setOutputValue(
+      this.getPath(this.props.convertReducer.toToken,this.props.convertReducer.fromToken),
+      this.props.convertReducer.inputVal
+    )
+  }
+
   setOutputValue(path, value) {
     var _requestCounter = ++requestCounter
     getReturn(path,value)
@@ -129,7 +158,6 @@ class MConvert extends React.Component {
     let fromTokenAddr = this.props.convertReducer.fromTokenAddress;
     let toTokenAddr = this.props.convertReducer.toTokenAddress;
     let inputVal = this.props.convertReducer.inputVal;
-
     isBalanceEnough(fromTokenAddr,inputVal).then( result => {
       if(!result) {
         this.eventTarget.elements[CONVERT_UPDATE_INPUT].setCustomValidity("Not enough Balance")
@@ -173,7 +201,8 @@ class MConvert extends React.Component {
                 <div className="form-group">
                   <div className="input-group">
                     <div className="input-group-prepend ">
-                      <label className="input-group-text bg-light" style={{width: 60 + 'px'}} htmlFor="inputGroupSelect01">From</label>
+                      <button className="input-group-text bg-light" type="button" onClick={this.switch} style={{width: 40 + 'px'}}><i className="fas fa-exchange-alt fa-rotate-90 fa-1x"></i></button>
+                      <label className="input-group-text bg-light" style={{width: 60+ 'px'}} htmlFor="inputGroupSelect01">From</label>
                     </div>
                     <select className="custom-select selectpicker" name={CONVERT_UPDATE_FROM_TOKEN} id="inputGroupSelect01" 
                     onChange={this.handleChange} 
@@ -188,12 +217,13 @@ class MConvert extends React.Component {
                 <div className="form-label-group">
                   <input type="number" step="any" min="0" id="inputValue" name ={CONVERT_UPDATE_INPUT} 
                   onChange={this.handleChange} 
-                  value={this.props.convertReducer.inputVal} className="form-control" placeholder="Input value" required autoFocus />
-                  <label htmlFor="inputValue" className="text-secondary">Input value</label>
+                  value={this.props.convertReducer.inputVal} className="form-control" placeholder={"Max input value: " + this.props.convertReducer.maxValue } required autoFocus />
+                  <label htmlFor="inputValue" className="text-secondary">{"Max input value: " + this.props.convertReducer.maxValue }</label>
                 </div>
                 <div className="form-group">
                   <div className="input-group">
                     <div className="input-group-prepend ">
+                    <button className="input-group-text bg-light" type="button" onClick={this.switch} style={{width: 40 + 'px'}}><i className="fas fa-exchange-alt fa-rotate-90 fa-1x"></i></button>
                       <label className="input-group-text bg-light" style={{width: 60 + 'px'}} htmlFor="inputGroupSelect02">To</label>
                     </div>
                     <select className="custom-select" name={CONVERT_UPDATE_TO_TOKEN} id="inputGroupSelect02" 
@@ -213,7 +243,7 @@ class MConvert extends React.Component {
                     className="form-control" placeholder="Output value" required />
                   <label htmlFor="outputValue" className="text-secondary">Estimated output value</label>
                 </div>
-                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.convertReducer.isDisabled} type="submit"  >CONVERT</button>
+                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.convertReducer.isDisabled} type="submit"  ><i className="fas fa-exchange-alt  fa-1x"></i> CONVERT</button>
                 <hr className="my-4" />
                 <Alert/>
               </form>
@@ -243,7 +273,8 @@ const mapDispatchToProps = (dispatch) => {
     convertApproveOrReject: (payload) => { dispatch(convertApproveOrReject(payload))},
     convertDisable: () => { dispatch(convertDisable())},
     convertEnable: () => { dispatch(convertEnable())},
-    convertUpdateAlertMessage: (payload) => { dispatch(convertUpdateAlertMessage(payload))}
+    convertUpdateAlertMessage: (payload) => { dispatch(convertUpdateAlertMessage(payload))},
+    convertMaxValue: (payload) => { dispatch(convertMaxValue(payload))},
   }
 }
 

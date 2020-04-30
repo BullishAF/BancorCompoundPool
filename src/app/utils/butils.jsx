@@ -66,6 +66,36 @@ async function getBalanceOfTokenAndDecimals(tokenAddress) {
   return results;
 }
 
+async function getBalanceOf(tokenAddress) {
+  const web3 = window.web3;
+  const senderAddress = web3.currentProvider.selectedAddress;
+  const erc20Contract = new web3.eth.Contract(ERC20Token.abi, tokenAddress);
+  return fromDecimals(
+    await erc20Contract.methods.balanceOf(senderAddress).call(),
+    await erc20Contract.methods.decimals().call()
+  );
+}
+
+
+async function getBalancesOf(tokenAddress1,tokenAddress2) {
+  const web3 = window.web3;
+  const senderAddress = web3.currentProvider.selectedAddress;
+
+  const erc201Contract = new web3.eth.Contract(ERC20Token.abi, tokenAddress1);
+  const erc202Contract = new web3.eth.Contract(ERC20Token.abi, tokenAddress2);
+
+  return [
+    fromDecimals(
+      await erc201Contract.methods.balanceOf(senderAddress).call(),
+      await erc201Contract.methods.decimals().call()
+    ),    
+    fromDecimals(
+      await erc202Contract.methods.balanceOf(senderAddress).call(),
+      await erc202Contract.methods.decimals().call()
+    )
+  ]
+}
+
 async function convert(path, amount,props) {
   let web3 = window.web3;
   let senderAddress = web3.currentProvider.selectedAddress;
@@ -81,8 +111,8 @@ async function convert(path, amount,props) {
   let bancorNetworkAddress = await getContractAddress("BancorNetwork");
   let allowance = await erc20from.methods.allowance(senderAddress,bancorNetworkAddress).call();
 
-  if(amount - allowance > 0) {
-    if(allowance > 0) try {
+  if(BigNumber(amount).isGreaterThan(BigNumber(allowance))) {
+    if(BigNumber(allowance).isGreaterThan(0)) try {
       props.convertUpdateAlertMessage("The approved allowance of "+ props.convertReducer.fromToken + " is not enough, it has to be set to zero first.")
       await erc20from.methods.approve(bancorNetworkAddress,0).send({from:senderAddress,gasPrice:20000000000})
     } catch {
@@ -97,6 +127,7 @@ async function convert(path, amount,props) {
       return 0;
     }
   }
+
   props.convertUpdateAlertMessage("Please confirm the convert transaction");
   let bancorNetwork = new web3.eth.Contract(BancorNetwork.abi, bancorNetworkAddress);
   let output = await bancorNetwork.methods.claimAndConvert2(path, amount, 1, ZERO_ADDRESS, 0).send({from: senderAddress,gasPrice:20000000000})
@@ -112,7 +143,7 @@ async function isBalanceEnough(token, amount) {
   let amountdec = toDecimals(amount,decimals);
   let balance = await erc20.methods.balanceOf(senderAddress).call();
 
-  if(balance-amountdec>=0) return true;
+  if(BigNumber(balance).isGreaterThanOrEqualTo(BigNumber(amountdec))) return true;
   else return false;
 }
 
@@ -154,7 +185,6 @@ async function invest(props,event) {
   let erc201balance = await erc201.methods.balanceOf(senderAddress).call();
   let erc202balance = await erc202.methods.balanceOf(senderAddress).call();
 
-
   let decimalsSm = await erc20sm.methods.decimals().call();
   let smSupply = await erc20sm.methods.totalSupply().call();
   let smAmount = toDecimals(amount,decimalsSm);
@@ -165,22 +195,23 @@ async function invest(props,event) {
   let reserveBalance1 = await converter.methods.getReserveBalance(token1).call();
   let reserveBalance2 = await converter.methods.getReserveBalance(token2).call();
 
-
   let formula = new web3.eth.Contract(BancorFormula.abi, await getContractAddress("BancorFormula"))
 
   let reserveAmount1 = await formula.methods.calculateFundCost(smSupply, reserveBalance1,"1000000", smAmount).call();
   let reserveAmount2 = await formula.methods.calculateFundCost(smSupply, reserveBalance2, "1000000", smAmount).call();
 
   let isBalancesEnough = true;
-  if(reserveAmount1-erc201balance > 0) 
+  if(BigNumber(reserveAmount1).isGreaterThan(BigNumber(erc201balance))) 
   {
+    console.log(123)
     event.elements["expectedVal1"].setCustomValidity("Not enough Balance")
     isBalancesEnough = false;
   }
 
-  if(reserveAmount2-erc202balance > 0) {
+  if(BigNumber(reserveAmount2).isGreaterThan(BigNumber(erc202balance))) {
     event.elements["expectedVal2"].setCustomValidity("Not enough Balance")
     isBalancesEnough = false;
+    console.log(124)
   }
 
   if(!isBalancesEnough) {
@@ -193,8 +224,7 @@ async function invest(props,event) {
   let allowance1 = await erc201.methods.allowance(senderAddress,converterAddress).call();
   let allowance2 = await erc202.methods.allowance(senderAddress,converterAddress).call();
 
-
-  if(reserveAmount1 - allowance1 > 0) {
+  if(BigNumber(reserveAmount1).isGreaterThan(allowance1)) {
     if(allowance1 > 0) try {
       props.investUpdateAlertMessage("The approved allowance of "+ props.investReducer.token1 + " is not enough, it has to be set to zero first.")
       await erc201.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:20000000000})
@@ -211,8 +241,7 @@ async function invest(props,event) {
     }
   }
 
-
-  if(reserveAmount2 - allowance2 > 0) {
+  if(BigNumber(reserveAmount2).isGreaterThan(allowance2)) {
      if(allowance2 > 0) try {
       props.investUpdateAlertMessage("The approved allowance of "+ props.investReducer.token2 + " is not enough, it has to be set to zero first.")
       await erc202.methods.approve(converterAddress,0).send({from:senderAddress,gasPrice:20000000000})
@@ -228,6 +257,7 @@ async function invest(props,event) {
       return 0;
     }
   }
+  
   props.investUpdateAlertMessage("Please confirm the invest transaction")
   await converter.methods.fund(smAmount).send({from:senderAddress,gasPrice:20000000000});
   props.investUpdateAlertMessage("")
@@ -276,6 +306,8 @@ function isEmpty(obj) {
 }
 
 export {
+  getBalanceOf,
+  getBalancesOf,
   isEmpty,
   liquidate,
   getLiquidateOutputs,

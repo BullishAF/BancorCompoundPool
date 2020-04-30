@@ -14,7 +14,7 @@ export default class DappSelect extends React.Component {
 							<div className="card-body d-flex align-items-end flex-column text-right">
 								<h4>Convert</h4>
 								<p className="w-75">Bancor Network conversion fast & secure</p>
-								<i className="fas fa-sync-alt"></i>
+								<i className="fas fa-exchange-alt"></i>
 							</div>
 						</a>
 						<a href="/invest" className="after-loop-item card border-0 card-auditor">
@@ -28,7 +28,7 @@ export default class DappSelect extends React.Component {
 							<div className="card-body d-flex align-items-end flex-column text-right">
 								<h4>Liquidate</h4>
 								<p className="w-75">Burn your Smart Tokens to retrieve your funds</p>
-								<i className="fas fa-sign-out-alt"></i>
+								<i class="fas fa-fire-alt"></i>
 							</div>
 						</a>
 					</div>

@@ -12,6 +12,7 @@ import {
   investDisable,
   investApproveOrReject,
   investUpdateAlertMessage,
+  investMaxValues,
 } from "../actions/investActions.jsx";
 
 import { 
@@ -23,9 +24,11 @@ import {
   isBalanceEnough,
   getInvestOutputs,
   isEmpty,
+  getBalancesOf,
 } from "../utils/butils.jsx"
 
 var requestCounter = 0;
+var requestCounterMax = 0;
 
 class MInvest extends React.Component {
 
@@ -36,6 +39,7 @@ class MInvest extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setOutputValue = this.setOutputValue.bind(this);
+    this.getMaxValues = this.getMaxValues.bind(this);
 
     this.eventToAction = {
       INVEST_UPDATE_POOL:(value) => {
@@ -54,6 +58,18 @@ class MInvest extends React.Component {
     if(!(this.props.investReducer.pool == prevProps.investReducer.pool)) {
       this.setOutputValue(this.props.investReducer.inputVal)
     }
+  }
+
+  getMaxValues() {
+    var _requestCounter = ++requestCounterMax
+    getBalancesOf(this.props.investReducer.token1Address,this.props.investReducer.token2Address)
+    .then(
+      output => {
+          this.props.investMaxValues([output,_requestCounter])
+      }
+    ,
+      () => {}
+    )
   }
   
   handleChange(event) {
@@ -98,6 +114,7 @@ class MInvest extends React.Component {
       }
       ,
       error => {
+        console.log(error)
         this.props.investApproveOrReject(false);
         this.props.investUpdateAlertMessage("");
         this.props.investEnable();
@@ -105,7 +122,6 @@ class MInvest extends React.Component {
       }
     )
   }
-
 
 	render() {
     return (
@@ -133,8 +149,8 @@ class MInvest extends React.Component {
                   <input type="number" step="any" min="0" id="inputValue" 
                   name ={INVEST_UPDATE_INPUT} 
                   onChange={this.handleChange} 
-                  value={this.props.investReducer.inputVal} className="form-control" placeholder="SmartToken amount to be minted" required autoFocus/>
-                  <label htmlFor="inputValue" className="text-secondary">SmartToken amount to be minted</label>
+                  value={this.props.investReducer.inputVal} className="form-control" placeholder="Smart token amount to be minted" required autoFocus/>
+                  <label htmlFor="inputValue" className="text-secondary">Smart token amount to be minted</label>
                 </div>
                 <div className="form-group">
                   <div className="input-group">
@@ -158,7 +174,7 @@ class MInvest extends React.Component {
                     className="form-control" placeholder="" />
                   </div>
                 </div>
-                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.investReducer.isDisabled} type="submit"  >INVEST</button>
+                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.investReducer.isDisabled} type="submit"  > INVEST</button>
                 <hr className="my-4" />
                 <Alert/>
               </form>
@@ -173,7 +189,7 @@ class MInvest extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
-    investReducer: state.investReducer ,
+    investReducer: state.investReducer,
     walletReducer: state.walletReducer,
   };
 };
@@ -187,6 +203,7 @@ const mapDispatchToProps = (dispatch) => {
     investEnable: () => {dispatch(investEnable())},
     investApproveOrReject: (payload)=> {dispatch(investApproveOrReject(payload))},
     investUpdateAlertMessage: (payload)=> {dispatch(investUpdateAlertMessage(payload))},
+    investMaxValues: (payload)=> {dispatch(investMaxValues(payload))}
   }
 }
 

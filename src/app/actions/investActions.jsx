@@ -5,7 +5,8 @@ import {
   INVEST_DISABLE,
   INVEST_ENABLE,
   INVEST_APPROVE_OR_REJECT,
-  INVEST_UPDATE_ALERT_MESSAGE} from "./action-types.jsx";
+  INVEST_UPDATE_ALERT_MESSAGE,
+  INVEST_MAX_VALUES} from "./action-types.jsx";
 
 function investUpdatePool(payload = 0) {
   return {
@@ -56,6 +57,15 @@ function investUpdateAlertMessage(payload = 0){
   } 
 }
 
+function investMaxValues(payload = 0){
+  return { 
+    type: INVEST_MAX_VALUES,
+    payload: payload
+  } 
+}
+
+
+
 export {
   investApproveOrReject,
   investUpdateOutputs,
@@ -64,4 +74,5 @@ export {
   investEnable,
   investDisable,
   investUpdateAlertMessage,
+  investMaxValues,
 }

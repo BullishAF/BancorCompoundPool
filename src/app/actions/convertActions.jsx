@@ -7,7 +7,8 @@ import {
   CONVERT_DISABLE,
   CONVERT_ENABLE,
   CONVERT_APPROVE_OR_REJECT,
-  CONVERT_UPDATE_ALERT_MESSAGE} from "./action-types.jsx";
+  CONVERT_UPDATE_ALERT_MESSAGE,
+  CONVERT_MAX_VALUE} from "./action-types.jsx";
 
 
 function convertUpdateOutput(payload = 0) {
@@ -68,6 +69,13 @@ function convertUpdateAlertMessage(payload = 0){
 }
 
 
+function convertMaxValue(payload = 0){
+  return { 
+    type: CONVERT_MAX_VALUE,
+    payload: payload
+  } 
+}
+
 export {
   convertApproveOrReject,
   convertUpdateOutput,
@@ -77,4 +85,5 @@ export {
   convertEnable,
   convertDisable,
   convertUpdateAlertMessage,
+  convertMaxValue,
 }

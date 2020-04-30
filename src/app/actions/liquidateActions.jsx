@@ -4,7 +4,8 @@ import {
   LIQUIDATE_UPDATE_OUTPUTS,
   LIQUIDATE_DISABLE,
   LIQUIDATE_ENABLE,
-  LIQUIDATE_APPROVE_OR_REJECT} from "./action-types.jsx";
+  LIQUIDATE_APPROVE_OR_REJECT,
+  LIQUIDATE_MAX_VALUE,} from "./action-types.jsx";
 
 function liquidateUpdatePool(payload = 0) {
   return {
@@ -48,6 +49,15 @@ function liquidateApproveOrReject(payload = 0){
   } 
 }
 
+function liquidateMaxValue(payload = 0){
+  return { 
+    type: LIQUIDATE_MAX_VALUE,
+    payload: payload
+  } 
+}
+
+
+
 export {
   liquidateApproveOrReject,
   liquidateUpdateOutputs,
@@ -55,4 +65,5 @@ export {
   liquidateUpdateInput,
   liquidateEnable,
   liquidateDisable,
+  liquidateMaxValue
 }

@@ -7,6 +7,7 @@ import {
   INVEST_ENABLE,
   INVEST_APPROVE_OR_REJECT, 
   INVEST_UPDATE_ALERT_MESSAGE,
+  INVEST_MAX_VALUES,
 } from "../actions/action-types.jsx";
 
 const initPoolAddress = [
@@ -36,7 +37,10 @@ const initialState = {
   inputVal: "0.0",
   approveOrReject: false,
   isDisabled: false,
-  requestCounter: -1
+  requestCounter: -1,
+  requestCounterMax: -1,
+  maxValue1: "0.0",
+  maxValue2: "0.0",
 };
 
 function investReducer(state = initialState, action) {
@@ -82,6 +86,14 @@ function investReducer(state = initialState, action) {
     case INVEST_UPDATE_ALERT_MESSAGE: {
       return Object.assign({}, state, {
           alertMessage: action.payload,
+      })
+    }
+    case INVEST_MAX_VALUES: {
+      var isPassed = action.payload[2] > state.requestCounterMax;
+      return Object.assign({}, state, {
+          maxValue1: isPassed ? action.payload[0]: state.maxValue1,
+          maxValue2: isPassed ? action.payload[1]: state.maxValue2,
+          requestCounterMax: isPassed ? action.payload[2]: state.requestCounterMax
       })
     }
     default:

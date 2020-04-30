@@ -7,7 +7,8 @@ import {
   CONVERT_DISABLE,
   CONVERT_ENABLE,
   CONVERT_APPROVE_OR_REJECT,
-  CONVERT_UPDATE_ALERT_MESSAGE} from "../actions/action-types.jsx";
+  CONVERT_UPDATE_ALERT_MESSAGE,
+  CONVERT_MAX_VALUE} from "../actions/action-types.jsx";
 
 
 const tokens = {
@@ -22,12 +23,14 @@ const initialState = {
   toToken: "DAI",
   fromTokenAddress: tokens["BNT"],
   toTokenAddress: tokens["DAI"],
-  inputVal: "",
+  inputVal: "0.0",
   outputVal: "0.0",
   approveOrReject: false,
   isDisabled: false,
   requestCounter:-1,
   alertMessage:"",
+  requestCounterMax: -1,
+  maxValue:"0.0",
 };
 
 function convertReducer(state = initialState, action) {
@@ -85,6 +88,14 @@ function convertReducer(state = initialState, action) {
     case CONVERT_UPDATE_ALERT_MESSAGE: {
       return Object.assign({}, state, {
           alertMessage: action.payload,
+      })
+    }
+
+    case CONVERT_MAX_VALUE: {
+      var isPassed = action.payload[1] > state.requestCounterMax;
+      return Object.assign({}, state, {
+          maxValue: isPassed ? action.payload[0]: state.maxValue,
+          requestCounterMax: isPassed ? action.payload[1]: state.requestCounterMax
       })
     }
     default:

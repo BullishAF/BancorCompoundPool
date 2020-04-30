@@ -10,7 +10,8 @@ class MAlert extends React.Component {
     super(props);
   }
   
-  componentDidMount() {
+  componentDidUpdate() {
+
   }
 
   render() {
@@ -72,6 +73,7 @@ class MAlert extends React.Component {
 		)}
 		</div>
       </div>
+
     )
   }
 };

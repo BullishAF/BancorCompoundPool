@@ -5,7 +5,8 @@ import {
   LIQUIDATE_UPDATE_OUTPUTS,
   LIQUIDATE_DISABLE,
   LIQUIDATE_ENABLE,
-  LIQUIDATE_APPROVE_OR_REJECT, 
+  LIQUIDATE_APPROVE_OR_REJECT,
+  LIQUIDATE_MAX_VALUE, 
 } from "../actions/action-types.jsx";
 
 const initPoolAddress = [
@@ -34,7 +35,9 @@ const initialState = {
   inputVal: "0.0",
   approveOrReject: false,
   isDisabled: false,
-  requestCounter: -1
+  requestCounter: -1,
+  requestCounterMax: -1,
+  maxValue: "0.0",
 };
 
 function liquidateReducer(state = initialState, action) {
@@ -54,14 +57,7 @@ function liquidateReducer(state = initialState, action) {
         inputVal: action.payload,
       })
     }
-    case LIQUIDATE_UPDATE_OUTPUTS: {
-      var isPassed = action.payload[2] > state.requestCounter;
-      return Object.assign({}, state, {
-          token1Output: isPassed ? action.payload[0]: state.token1Output,
-          token2Output: isPassed ? action.payload[1]: state.token2Output,
-          requestCounter: isPassed ? action.payload[2]: state.requestCounter
-      })
-    }
+
     case LIQUIDATE_DISABLE: {
       return Object.assign({}, state, {
         isDisabled: true,
@@ -75,6 +71,21 @@ function liquidateReducer(state = initialState, action) {
     case LIQUIDATE_APPROVE_OR_REJECT: {
       return Object.assign({}, state, {
           approveOrReject: action.payload,
+      })
+    }
+    case LIQUIDATE_UPDATE_OUTPUTS: {
+      var isPassed = action.payload[2] > state.requestCounter;
+      return Object.assign({}, state, {
+          token1Output: isPassed ? action.payload[0]: state.token1Output,
+          token2Output: isPassed ? action.payload[1]: state.token2Output,
+          requestCounter: isPassed ? action.payload[2]: state.requestCounter
+      })
+    }
+    case LIQUIDATE_MAX_VALUE: {
+      var isPassed = action.payload[1] > state.requestCounterMax;
+      return Object.assign({}, state, {
+          maxValue: isPassed ? action.payload[0]: state.maxValue,
+          requestCounterMax: isPassed ? action.payload[1]: state.requestCounterMax
       })
     }
   	default:
