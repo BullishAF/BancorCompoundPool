@@ -77,7 +77,6 @@ class MInvest extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.investDisable();
-    this.eventTarget = event.target;
     if(!(
       this.props.walletReducer.isConnected &&
       !this.props.walletReducer.isDenied &&
@@ -88,36 +87,23 @@ class MInvest extends React.Component {
       return;
     }
 
-    isBalanceEnough(this.props.investReducer.token1Address,this.props.investReducer.token1Output).then( result1 => {
-      if(!result1) this.eventTarget.elements["expectedVal1"].setCustomValidity("Not enough Balance")
-      isBalanceEnough(this.props.investReducer.token2Address,this.props.investReducer.token2Output).then( result2 => {
-        if(!result2) this.eventTarget.elements["expectedVal2"].setCustomValidity("Not enough Balance")
-        if(!result1 || !result2) {
-          this.eventTarget.reportValidity();
-          this.props.investEnable();
-          this.eventTarget.elements["expectedVal1"].setCustomValidity("")
-          this.eventTarget.elements["expectedVal2"].setCustomValidity("")
-        }
-        else {
-          let tx = invest(this.props)
-          this.props.investApproveOrReject(true)
-          tx.then(
-            () => {
-              this.props.investEnable();
-              this.props.investApproveOrReject(false);
-              this.props.investUpdateAlertMessage("");
-              this.setOutputValue(this.props.investReducer.inputVal);
-            }
-            ,
-            error => {
-              this.props.investApproveOrReject(false);
-              this.props.investUpdateAlertMessage("");
-              this.props.investEnable();
-            }
-          )
-        }
-      })
-    })
+    let tx = invest(this.props,event.target)
+    this.props.investApproveOrReject(true)
+    tx.then(
+      () => {
+        this.props.investEnable();
+        this.props.investApproveOrReject(false);
+        this.props.investUpdateAlertMessage("");
+        this.setOutputValue(this.props.investReducer.inputVal);
+      }
+      ,
+      error => {
+        this.props.investApproveOrReject(false);
+        this.props.investUpdateAlertMessage("");
+        this.props.investEnable();
+        this.setOutputValue(this.props.investReducer.inputVal);
+      }
+    )
   }
 
 

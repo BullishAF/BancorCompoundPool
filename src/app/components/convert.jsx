@@ -54,7 +54,6 @@ class MConvert extends React.Component {
 
     this.eventToAction = {
       CONVERT_UPDATE_OUTPUT: (value) => {
-        // this.props.convertUpdateOutput(value) 
       },
       CONVERT_UPDATE_INPUT: (value) => {
         if(isNaN(value)) return;

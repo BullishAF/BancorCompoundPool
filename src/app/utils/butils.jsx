@@ -136,13 +136,13 @@ async function getInvestOutputs(sm,amount,token1,token2) {
   return [fromDecimals(reserveAmount1,decimals1),fromDecimals(reserveAmount2,decimals2)]
 }
 
-async function invest(props) {
+async function invest(props,event) {
 
   let sm = props.investReducer.poolAddress;
   let amount = props.investReducer.inputVal;
+
   let token1 = props.investReducer.token1Address;
   let token2 = props.investReducer.token2Address;
-
 
   let web3 = window.web3;
   let senderAddress = web3.currentProvider.selectedAddress;
@@ -151,17 +151,44 @@ async function invest(props) {
   let erc201 = new web3.eth.Contract(ERC20Token.abi, token1);
   let erc202 = new web3.eth.Contract(ERC20Token.abi, token2);
 
+  let erc201balance = await erc201.methods.balanceOf(senderAddress).call();
+  let erc202balance = await erc202.methods.balanceOf(senderAddress).call();
+
+
   let decimalsSm = await erc20sm.methods.decimals().call();
   let smSupply = await erc20sm.methods.totalSupply().call();
   let smAmount = toDecimals(amount,decimalsSm);
+
   let converterAddress = await erc20sm.methods.owner().call();
   let converter = new web3.eth.Contract(BCConverter.abi, converterAddress)
+
   let reserveBalance1 = await converter.methods.getReserveBalance(token1).call();
   let reserveBalance2 = await converter.methods.getReserveBalance(token2).call();
+
+
   let formula = new web3.eth.Contract(BancorFormula.abi, await getContractAddress("BancorFormula"))
 
   let reserveAmount1 = await formula.methods.calculateFundCost(smSupply, reserveBalance1,"1000000", smAmount).call();
   let reserveAmount2 = await formula.methods.calculateFundCost(smSupply, reserveBalance2, "1000000", smAmount).call();
+
+  let isBalancesEnough = true;
+  if(reserveAmount1-erc201balance > 0) 
+  {
+    event.elements["expectedVal1"].setCustomValidity("Not enough Balance")
+    isBalancesEnough = false;
+  }
+
+  if(reserveAmount2-erc202balance > 0) {
+    event.elements["expectedVal2"].setCustomValidity("Not enough Balance")
+    isBalancesEnough = false;
+  }
+
+  if(!isBalancesEnough) {
+    event.reportValidity();
+    event.elements["expectedVal1"].setCustomValidity("")
+    event.elements["expectedVal2"].setCustomValidity("")
+    return 0;
+  }
 
   let allowance1 = await erc201.methods.allowance(senderAddress,converterAddress).call();
   let allowance2 = await erc202.methods.allowance(senderAddress,converterAddress).call();
