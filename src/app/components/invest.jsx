@@ -3,7 +3,7 @@ import React from "react";
 import { render } from "react-dom";
 import { connect } from "react-redux";
 import Alert from "./alert.jsx";
-
+import BigNumber from "bignumber.js"
 import { 
   investUpdatePool, 
   investUpdateInput,
@@ -62,6 +62,7 @@ class MInvest extends React.Component {
   }
 
   componentDidMount(){
+    this.getMaxValues()
     var item = JSON.parse(localStorage.getItem('modalState'));
     if(typeof item === 'boolean')
       this.modalState = item;
@@ -71,7 +72,8 @@ class MInvest extends React.Component {
   componentDidUpdate(prevProps) {
     if(!(this.props.investReducer.pool == prevProps.investReducer.pool)) {
       this.setOutputValue(this.props.investReducer.inputVal)
-    }
+      this.getMaxValues()
+    } 
   }
 
   getMaxValues() {
@@ -79,7 +81,8 @@ class MInvest extends React.Component {
     getBalancesOf(this.props.investReducer.token1Address,this.props.investReducer.token2Address)
     .then(
       output => {
-          this.props.investMaxValues([output,_requestCounter])
+        output.push(_requestCounter);
+        this.props.investMaxValues(output)
       }
     ,
       () => {}
@@ -175,6 +178,7 @@ class MInvest extends React.Component {
                   <label htmlFor="inputValue" className="text-secondary">Smart token amount to be minted</label>
                 </div>
                 <div className="form-group">
+                  <label className="speciallabel text-secondary">{"max: " + this.props.investReducer.maxValue1}</label>
                   <div className="input-group">
                     <div className="input-group-prepend" >
                       <label className="input-group-text bg-light" style={{width: 60 + 'px'}} htmlFor="expectedInputSelect01">{this.props.investReducer.token1}</label>
@@ -186,6 +190,7 @@ class MInvest extends React.Component {
                   </div>
                 </div>
                 <div className="form-group">
+                  <label className="speciallabel text-secondary">{"max: " + this.props.investReducer.maxValue2}</label>
                   <div className="input-group">
                     <div className="input-group-prepend ">
                       <label className="input-group-text bg-light" style={{width: 60 + 'px'}} htmlFor="expectedInputSelect02">{this.props.investReducer.token2}</label>
@@ -196,6 +201,7 @@ class MInvest extends React.Component {
                     className="form-control" placeholder="" />
                   </div>
                 </div>
+
                 <button className="btn btn-lg btn-secondary btn-block text-uppercase" type="submit" disabled={this.props.investReducer.isDisabled} > INVEST</button>
                 <hr className="my-4" />
                 <Alert/>

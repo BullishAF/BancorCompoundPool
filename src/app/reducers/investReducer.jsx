@@ -39,8 +39,8 @@ const initialState = {
   isDisabled: false,
   requestCounter: -1,
   requestCounterMax: -1,
-  maxValue1: "0.0",
-  maxValue2: "0.0",
+  maxValue1: "0",
+  maxValue2: "0",
 };
 
 function investReducer(state = initialState, action) {

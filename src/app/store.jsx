@@ -17,7 +17,7 @@ const store = createStore (
 		}
 	),
 	{},
-	// applyMiddleware(logger)	
+	applyMiddleware(logger)	
 	);
 
 window.store = store;
