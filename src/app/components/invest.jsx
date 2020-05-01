@@ -72,8 +72,8 @@ class MInvest extends React.Component {
   componentDidUpdate(prevProps) {
     if(!(this.props.investReducer.pool == prevProps.investReducer.pool)) {
       this.setOutputValue(this.props.investReducer.inputVal)
-      this.getMaxValues()
-    } 
+    }
+    this.getMaxValues()
   }
 
   getMaxValues() {
@@ -81,8 +81,10 @@ class MInvest extends React.Component {
     getBalancesOf(this.props.investReducer.token1Address,this.props.investReducer.token2Address)
     .then(
       output => {
-        output.push(_requestCounter);
-        this.props.investMaxValues(output)
+        if(!(output[1]==this.props.investReducer.maxValue2) ){
+          output.push(_requestCounter);
+          this.props.investMaxValues(output)
+        }
       }
     ,
       () => {}
