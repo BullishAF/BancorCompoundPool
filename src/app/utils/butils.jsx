@@ -293,6 +293,7 @@ async function liquidate(sm,amount) {
   let smAmount = toDecimals(amount,decimalsSm);
   let converterAddress = await erc20sm.methods.owner().call();
   let converter = new web3.eth.Contract(BCConverter.abi, converterAddress);
+  console.log(smAmount)
   await converter.methods.liquidate(smAmount).send({from:senderAddress,gasPrice:20000000000});
   return true;
 }

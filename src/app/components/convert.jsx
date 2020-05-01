@@ -154,6 +154,14 @@ class MConvert extends React.Component {
       return;
     }
 
+    if(Number(this.props.convertReducer.inputVal) == 0) {
+      this.props.convertEnable();
+      event.target.elements["CONVERT_UPDATE_INPUT"].setCustomValidity("The amount cannot be zero");
+      event.target.reportValidity();
+      event.target.elements["CONVERT_UPDATE_INPUT"].setCustomValidity("");
+      return;
+    }
+
     let smartTokenAddr = tokens['CDAIBNT']
     let fromTokenAddr = this.props.convertReducer.fromTokenAddress;
     let toTokenAddr = this.props.convertReducer.toTokenAddress;

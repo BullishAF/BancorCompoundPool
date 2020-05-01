@@ -105,6 +105,14 @@ class MLiquidate extends React.Component {
       return;
     }
 
+    if(Number(this.props.liquidateReducer.inputVal) == 0) {
+      this.props.liquidateEnable();
+      event.target.elements["LIQUIDATE_UPDATE_INPUT"].setCustomValidity("The amount cannot be zero");
+      event.target.reportValidity();
+      event.target.elements["LIQUIDATE_UPDATE_INPUT"].setCustomValidity("");
+      return;
+    }
+
     isBalanceEnough(this.props.liquidateReducer.poolAddress, this.props.liquidateReducer.inputVal).then( result => {
       if(!result) 
       {

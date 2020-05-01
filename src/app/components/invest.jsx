@@ -30,6 +30,7 @@ import {
 var requestCounter = 0;
 var requestCounterMax = 0;
 
+
 class MInvest extends React.Component {
 
   constructor(props) {
@@ -40,6 +41,8 @@ class MInvest extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.setOutputValue = this.setOutputValue.bind(this);
     this.getMaxValues = this.getMaxValues.bind(this);
+    this.handleModal = this.handleModal.bind(this);
+    this.modalState = true;
 
     this.eventToAction = {
       INVEST_UPDATE_POOL:(value) => {
@@ -52,6 +55,17 @@ class MInvest extends React.Component {
         this.setOutputValue(value)
       },
     }
+  }
+
+  handleModal() {
+    localStorage.setItem('modalState', JSON.stringify(false));
+  }
+
+  componentDidMount(){
+    var item = JSON.parse(localStorage.getItem('modalState'));
+    if(typeof item === 'boolean')
+      this.modalState = item;
+    if(this.modalState) $('#modalCenter').modal('show'); 
   }
 
   componentDidUpdate(prevProps) {
@@ -100,6 +114,14 @@ class MInvest extends React.Component {
       !this.props.walletReducer.isNetworkIncorrect
     )) {
       this.props.investEnable();
+      return;
+    }
+
+    if(Number(this.props.investReducer.inputVal) == 0) {
+      this.props.investEnable();
+      event.target.elements["INVEST_UPDATE_INPUT"].setCustomValidity("The amount cannot be zero");
+      event.target.reportValidity();
+      event.target.elements["INVEST_UPDATE_INPUT"].setCustomValidity("");
       return;
     }
 
@@ -174,9 +196,38 @@ class MInvest extends React.Component {
                     className="form-control" placeholder="" />
                   </div>
                 </div>
-                <button className="btn btn-lg btn-secondary btn-block text-uppercase" disabled={this.props.investReducer.isDisabled} type="submit"  > INVEST</button>
+                <button className="btn btn-lg btn-secondary btn-block text-uppercase" type="submit" disabled={this.props.investReducer.isDisabled} > INVEST</button>
                 <hr className="my-4" />
                 <Alert/>
+                <div className="modal fade" 
+                  id="modalCenter" 
+                  tabIndex="-1" 
+                  role="dialog" 
+                  aria-labelledby="modalCenterTitle" 
+                  aria-modal="true">
+                  <div className="modal-dialog modal-dialog-centered " role="document">
+                    <div className="modal-content bg-light">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="modalLongTitle">INVEST</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div className="modal-body">
+                        <p>The invest process is devided in two main steps:</p>
+                        <ul>
+                          <li>First you will be prompted to approve your tokens to be spent by the smart contract, depending on the selected pool the tokens to approve can change.</li>
+                          <li>Finally you will be prompted to confirm the invest transaction.</li>
+                        </ul>
+                        <p>Each time that a transaction is confirmed by the network you will be automatically prompted to confirm the next transaction, if the prompt does not appear please check you wallet.</p>
+                      </div>
+                      <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" onClick={this.handleModal} data-dismiss="modal">Do not show again</button>
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
